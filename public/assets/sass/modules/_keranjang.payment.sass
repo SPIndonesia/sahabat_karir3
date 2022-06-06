@@ -1,0 +1,42 @@
+@use '_reset'
+
+$tinggi-header: 80px
+$font-bold: montserrat_alternatesbold
+$warna-biru: #0779e4
+$warna-biru-dua: #2D96F9
+$shadow-light: 0 2px 5px 1px #ccc
+
+html
+    font-size: 10px
+
+body
+    max-width: 1920px
+    margin: auto
+
+// TODO: Header
+header
+    width: 100%
+    height: $tinggi-header
+    position: sticky
+    top: 0
+    transition: .3s
+    align-items: center
+    padding: 1em
+    box-sizing: border-box
+    background-color: #fff
+    z-index: 99
+    box-shadow: 0 1px 5px 0 rgba(153, 153, 153, .4)
+
+// TODO: Logo
+.sahabat-karir-logo
+    display: flex
+    align-items: center
+    gap: 2em
+
+    img
+        height: calc(#{$tinggi-header} - 20px)
+
+    h2
+        font-size: 2.8rem
+        font-weight: bold
+        color: $warna-biru

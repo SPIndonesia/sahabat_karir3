@@ -1,0 +1,292 @@
+$tinggi-header: 80px
+$warna-biru: #0779e4
+
+html
+    font-size: 10px
+
+body
+    max-width: 1920px
+    margin: auto
+    font-size: 1.4rem
+
+// TODO: Header
+#halaman-landing
+    margin-top: 20px
+
+    &>div
+        margin-bottom: 50px
+
+header
+    width: 100%
+    height: $tinggi-header
+    position: sticky
+    top: 0
+    transition: .3s
+    align-items: center
+    padding: 1em 2em
+    box-sizing: border-box
+    background-color: #fff
+    z-index: 99
+
+.header-shadow
+    box-shadow: 0 1px 5px 0 rgba(153, 153, 153, .4)
+
+// TODO: Logo
+.sahabat-karir-logo img
+    height: calc($tinggi-header - 20px)
+
+// TODO: Navigasi
+.navigasi-halaman-landing
+    width: 40%
+    display: flex
+    align-items: center
+
+    a
+        margin-right: 20px
+        padding: .3em
+
+// TODO: Pencarian
+.pencarian
+    width: calc(60% - $tinggi-header)
+    position: relative
+    display: flex
+    align-items: center
+
+    input
+        width: 100%
+        max-height: 30px
+        padding: 10px
+        box-sizing: border-box
+        border: 1px solid rgba(153, 153, 153, .5)
+
+    input:focus
+        outline: 2px solid rgba(7, 121, 228, .5)
+
+    svg
+        position: absolute
+        fill: $warna-biru
+        width: 20px
+        top: 50%
+        right: 10px
+        transform: translateY(-50%)
+
+    svg:hover
+        cursor: pointer
+        fill: rgba(7, 121, 228, .7)
+
+// TODO: Keranjang
+.keranjang-belanja
+    width: 2em
+    height: 2em
+    margin-left: 2em
+
+    svg
+        width: inherit
+        height: inherit
+        color: $warna-biru
+
+// TODO: Footer
+footer
+    background-color: $warna-biru
+    width: 100%
+    color: #fff
+    padding: 20px 50px
+    box-sizing: border-box
+
+.judul__footer
+    display: flex
+    gap: 20px
+    align-items: center
+
+    img
+        width: 70px
+
+    h2
+        font-size: 2rem
+        font-weight: bold
+
+.konten__footer
+    width: 89%
+    margin: auto
+    display: grid
+    gap: 20px
+    padding: 30px 0
+
+    &>div
+        display: grid
+        grid-template-rows: 30px 1fr
+
+    h3
+        font-size: 20px
+        font-weight: bold
+        color: #ccc
+
+    li
+        padding: 10px 0
+        color: #ccc
+
+    li a
+        background-image: linear-gradient(transparent 0%, transparent 70%, #fff 100%, #fff 100%)
+        background-repeat: no-repeat
+        background-size: 0% 100%
+        background-position-X: right
+        transition: background-size 300ms
+
+    a:hover
+        background-size: 100% 100%
+        background-position-x: left
+        color: #fff
+
+    .alamat li:last-child
+        display: flex
+
+    .alamat svg
+        width: 20px
+        margin-right: 10px
+        fill: #ccc
+
+// TODO: Desktop
+@media screen and (min-width:992px)
+
+    // TODO: Header
+    .sahabat-karir-logo
+        width: $tinggi-header
+
+    .hamburger-navigasi
+        display: none
+
+    // TODO: Navigasi
+    .navigasi-halaman-landing a
+        background-image: linear-gradient(transparent 0%, transparent 90%, rgba(7, 121, 228, .5) 90%, rgba(7, 121, 228, .5) 100%)
+        background-repeat: no-repeat
+        background-size: 0% 100%
+        background-position-X: right
+        transition: background-size 300ms
+
+        &:hover
+            background-size: 100% 100%
+            background-position-x: left
+            color: $warna-biru
+
+    // TODO: Footer
+    .konten__footer
+        grid-template-columns: repeat(3, 1fr) 2.5fr
+
+// Todo: Tab & Desktop
+@media screen and (min-width:768px)
+    .pembungkus-judul h1
+        font-size: 32px
+
+    // TODO: Header
+    header
+        display: flex
+
+    // TODO: Pencarian
+    .pencarian input
+        border-radius: 10px
+
+// TODO: Tab
+@media screen and (min-width:768px) and (max-width:992px)
+
+    // TODO: Header
+    header
+        justify-content: space-between
+
+    .sahabat-karir-logo
+        order: 1
+
+    // TODO: Navigasi
+    .navigasi-halaman-landing
+        width: 50%
+        order: 3
+
+    // TODO: Pencarian
+    .pencarian
+        order: 2
+        width: 80%
+
+    // TODO: Footer
+    .konten__footer
+        grid-template-columns: repeat(3, 30%)
+        justify-content: space-between
+
+// TODO: Tab dan Mobile
+@media screen and (max-width:992px)
+
+    // TODO: Header
+    .navigasi-halaman-landing
+        height: 0
+        position: absolute
+        top: $tinggi-header
+        right: 0
+        background-color: #fff
+        flex-direction: column
+        align-items: baseline
+        justify-content: space-between
+        padding: 0 20px
+        box-sizing: border-box
+        overflow: hidden
+        transition: .3s
+        border-bottom-left-radius: 10px
+        box-shadow: 0 0 5px 0 rgba(153, 153, 153, .5)
+        z-index: 999
+
+    // TODO: Navigasi
+    .lihat-navigasi
+        height: 150px
+        padding: 20px
+
+    .navigasi-halaman-landing a
+        display: block
+        width: fit-content
+
+    .hamburger-navigasi
+        display: initial
+        order: 4
+        width: min-content
+
+    svg
+        width: 28px
+
+// TODO: Mobile
+@media screen and (max-width:768px)
+    #halaman-landing
+        margin-top: 50px
+
+    .pembungkus-judul h1
+        font-size: 26px
+
+    // TODO: Header
+    header
+        display: grid
+        grid-template-areas: "logo hamburger" "pencarian pencarian"
+
+    .sahabat-karir-logo
+        grid-area: logo
+
+    .pencarian
+        width: 80%
+        grid-area: pencarian
+        justify-self: end
+        margin-top: 10px
+
+    .navigasi-halaman-landing
+        width: 80%
+
+    .hamburger-navigasi
+        grid-area: hamburger
+        justify-self: end
+
+    // TODO: Footer
+    footer
+        padding: 20px
+
+    .konten__footer .alamat .email
+        overflow-wrap: break-word
+
+    .konten__footer .alamat .lokasi
+        justify-content: space-between
+
+    .konten__footer .alamat p
+        width: 100%
+        padding: 0 20px

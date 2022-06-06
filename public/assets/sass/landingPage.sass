@@ -1,0 +1,292 @@
+@use 'modules/_reset'
+@use 'modules/_template' as template
+
+$shadow-default: 0 3px 3px 2px #eee
+
+.konten
+    margin-bottom: 100px !important
+    margin: auto
+    box-sizing: border-box
+
+.pembungkus-judul
+    text-align: center
+    margin-bottom: 24px
+
+    h1
+        color: template.$warna-biru
+        margin-bottom: 10px
+        font-weight: bolder
+
+    p
+        font-size: 20px
+        color: #494a4b
+
+// TODO: Jumbotron
+.pembungkus-jumbotron
+    position: relative
+    min-height: fit-content
+
+.jumbotron
+    width: 100%
+    height: inherit
+    border-radius: 20px
+    overflow: hidden
+
+    &-slider__arrow
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        z-index: 9
+        width: fit-content
+
+    &-slider__arrow img
+        width: inherit
+        opacity: .5
+        transition: opacity .5s
+        width: 50px
+
+    &-slider__arrow img:hover
+        cursor: pointer
+        opacity: 1
+
+    &-slider__arrow.go-back
+        left: 10px
+
+    &-slider__arrow.go-next
+        right: 10px
+
+// TODO: Gabung Bersama Kami
+.gabung-bersama-kami
+    margin: auto
+
+img.konten-logo
+    height: 100px
+    width: auto
+    justify-self: center
+    padding: 10px 0
+
+.lihat-kelas
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+    p
+        white-space: nowrap
+
+    svg
+        width: 20px
+        fill: template.$warna-biru
+        opacity: .7
+        transition: .3s
+
+    svg:hover
+        opacity: 1
+
+// TODO: Tentang Kami
+.tentang-kami
+    background-color: #fff
+    box-shadow: $shadow-default
+    border-radius: 20px
+    padding: 20px
+
+.konten__tentang-kami
+    display: flex
+    position: relative
+
+    h2
+        text-align: center
+        font-weight: bold
+        font-size: 24px
+        color: template.$warna-biru
+
+    span
+        display: grid
+        grid-template-columns: 50px auto
+        height: 50px
+        justify-items: center
+        align-items: center
+        margin: 20px
+        gap: 20px
+
+    span p:first-child
+        border: 1px solid #ccc
+        width: 50px
+        height: 50px
+        display: flex
+        align-items: center
+        justify-content: center
+        border-radius: 5px
+
+    .visi
+        flex: 1
+
+    .misi
+        flex: 1
+
+// TODO: Kenapa Harus Kami
+.pembungkus-konten__kenapa-harus-kami
+    display: grid
+    justify-content: space-between
+    gap: 20px
+
+.kartu
+    box-shadow: $shadow-default
+    padding: 10px
+    box-sizing: border-box
+    text-align: center
+
+    img
+        width: 100%
+
+    h2
+        font-weight: bold
+        color: template.$warna-biru
+        font-size: 25px
+        margin: 20px 0
+
+// TODO: Cerita Dari Sahabat
+.mb
+    margin-bottom: 10px
+
+.konten__cerita-dari-sahabat
+    display: grid
+
+    .profil-pengguna img
+        width: 70px
+        height: 70px
+        border-radius: 50%
+        padding: 5px
+        box-sizing: border-box
+        background-color: #eee
+
+    .info-pengguna h2
+        font-weight: 600
+        font-size: 22px
+
+    .info-pengguna h2:first-child
+        color: template.$warna-biru
+        letter-spacing: .05em
+
+    .info-pengguna h2:nth-child(2)
+        color: #555
+
+    .rating
+        display: flex
+        align-items: flex-end
+
+    .rating p
+        margin-right: 5px
+
+    .rating svg
+        width: 15px
+        transform: translateY(-2px)
+        fill: #ffa500
+
+// TODO: Cerita dari Sahabat & Gabung Bersama Kami
+.konten__gabung-bersama-kami,
+.konten__cerita-dari-sahabat
+    min-height: 200px
+    box-shadow: $shadow-default
+    margin: 20px
+    padding: 20px
+    box-sizing: border-box
+    border-radius: 10px
+
+.konten__gabung-bersama-kami h1,
+.konten__cerita-dari-sahabat h1
+    font-weight: bold
+    font-size: 20px
+    align-self: flex-end
+    color: template.$warna-biru
+    white-space: nowrap
+
+// TODO: Desktop
+@media screen and (min-width:992px)
+
+// TODO: Tab & Desktop
+@media screen and (min-width:768px)
+    .konten
+        width: 90%
+
+    // TODO: Jumbotron
+    .jumbotron img
+        width: inherit
+
+    // TODO: Konten Tentang Kami
+    .konten__tentang-kami>div:first-child:after
+        content: ''
+        background-color: template.$warna-biru
+        width: 3px
+        position: absolute
+        top: 0
+        bottom: 0
+        left: 50%
+        transform: translateX(-50%)
+
+    // TODO: Kenapa Harus Kami
+    .pembungkus-konten__kenapa-harus-kami
+        grid-template-columns: repeat(3, minmax(180px, 430px))
+
+// TODO: Tab
+@media screen and (min-width:768px) and (max-width:992px)
+
+    // TODO: Jumbotron
+    .pembungkus-jumbotron
+        width: 90%
+
+    // TODO: Kenapa Harus Kami
+    .pembungkus-konten__kenapa-harus-kami
+        grid-template-columns: repeat(2, 1fr)
+
+// TODO: Tab dan Mobile
+@media screen and (max-width:992px)
+
+// Todo: Mobile
+@media screen and (max-width:768px)
+    #halaman-landing
+        margin-top: 50px
+
+    .pembungkus-judul h1
+        font-size: 26px
+
+    .konten
+        width: 95%
+
+    // TODO: Jumbotron
+    .jumbotron
+        --tinggi-jumbotron: 50vw
+
+    .pembungkus-jumbotron
+        height: var(--tinggi-jumbotron)
+
+    .jumbotron img
+        height: var(--tinggi-jumbotron)
+
+    .jumbotron-slider__arrow img
+        width: 30px
+
+    // TODO: Lihat Kelas
+    .lihat-kelas p
+        font-size: 12px
+
+    // TODO: Tentang Kami
+    .konten__tentang-kami
+        flex-direction: column
+
+        h2
+            border-bottom: 3px solid template.$warna-biru
+
+        &>div
+            margin-bottom: 50px
+
+        span
+            font-size: 11px
+            margin: 20px 0
+
+    // TODO: Kartu
+    .kartu h2
+        font-size: 20px
+
+    // TODO: Kenapa Harus Kami
+    .pembungkus-konten__kenapa-harus-kami
+        grid-template-columns: 1fr

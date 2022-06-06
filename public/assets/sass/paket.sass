@@ -1,0 +1,278 @@
+@use 'modules/_admin' as admin
+@use 'components/input'
+@use 'components/kartu'
+
+.paket
+    @include admin.kontenAdmin()
+
+    &>div
+        margin-bottom: 2em
+
+.sec-one
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 1em
+    column-gap: 1em
+
+    background-color: #fff
+    border-radius: 10px
+    box-shadow: 0 2px 5px 1px #cacaca
+
+    svg
+        color: admin.$warna-biru
+
+    .pencarian
+        flex: 1
+        border-radius: 5px
+        border: 1px solid #ccc
+        padding: .2em .5em
+
+        form
+            display: flex
+            align-items: center
+            column-gap: 1em
+
+            padding: .2em .5em
+
+        input
+            flex: 1
+            border: none
+            background: none
+            height: 100%
+
+            &:focus
+                outline: none
+
+        svg
+            width: 15px
+            height: 15px
+
+    .print
+        width: fit-content
+
+        svg
+            width: 15px
+            height: 15px
+
+            &:hover
+                cursor: pointer
+
+.sec-two
+    padding: 1em
+
+    .judul
+        display: flex
+        align-items: center
+        justify-content: space-between
+        padding: .5em 0
+
+        margin-bottom: 2em
+
+        h1
+            color: admin.$warna-biru
+            font-size: 3rem
+
+        a
+            padding: .2em 1em
+            border-radius: 5px
+            background-color: #2D96F9
+            color: #fff
+            display: flex
+            align-items: center
+            column-gap: .5em
+
+            transition: background-color 500ms
+
+            &::after
+                content: '+'
+                font-size: 3rem
+
+            &:hover
+                background-color: admin.$warna-biru
+
+    .tabel
+        overflow-x: auto
+        width: 100%
+
+        table
+            width: inherit
+            min-width: 500px
+
+        tr
+            border-bottom: 1px solid admin.$warna-biru
+            border-collapse: collapse
+
+        th
+            font-weight: bold
+
+        th, td
+            padding: .5em
+            text-align: center
+
+            &:first-child
+                text-align: center
+
+        .aksi
+            display: flex
+            column-gap: .5em
+            align-items: center
+            justify-content: center
+
+            &>div
+                padding: .5em
+                border-radius: 5px
+                transition: background-color 500ms
+
+                &:hover
+                    cursor: pointer
+
+            svg
+                color: #fff
+                width: 15px
+                height: 15px
+
+            .ubah
+                background-color: #0883F6
+
+                &:hover
+                    background-color: admin.$warna-biru
+
+            .hapus
+                background-color: #FF2424
+
+                &:hover
+                    background-color: #FF1212
+
+        .next-prev
+            display: flex
+            column-gap: 1em
+            margin-top: 2em
+
+            float: right
+
+            &>a
+                padding: 1em
+                border-radius: 50%
+                border: 1px solid #ccc
+                transition: background-color 300ms
+
+                &:hover
+                    background-color: #eaeaea
+
+            & svg
+                width: 20px
+                height: 20px
+                color: #aaa
+
+// TODO: Popup paket
+.popup
+    position: absolute
+    opacity: 0
+    display: none
+
+    top: 0
+    left: 0
+
+    width: 100vw
+    height: 100vh
+
+    background-color: rgba(0, 0, 0, .3)
+    z-index: 999999
+
+    transition: opacity 300ms
+
+.paket-popup
+    position: relative
+
+    width: 50vw
+    height: 80vh
+
+    background-color: #fff
+    border-radius: 10px
+
+    top: 50%
+    left: 50%
+
+    transform: translate(-50%, -50%)
+
+    .tombol-close
+        position: absolute
+        top: 10px
+        right: 10px
+        z-index: 1
+
+        width: 2em
+        height: 2em
+
+        &:hover
+            cursor: pointer
+
+        &>svg
+            width: 100%
+            height: 100%
+
+            color: #3e3e3e
+
+    .konten
+        height: 100%
+        padding: 10px
+        box-sizing: border-box
+        overflow: auto
+
+        .judul
+            transform: translateY(-10px)
+
+            position: sticky
+            top: 0
+            background-color: #fff
+            padding: 1em 0
+            z-index: 0
+
+            font-size: 2rem
+            font-weight: bold
+            color: admin.$warna-biru
+
+        .form
+            li
+                display: flex
+                flex-direction: column
+                gap: .5em
+
+                margin-bottom: 1em
+
+            input
+                @include input.input()
+
+                border: 1px solid #ccc
+                font-size: 1.4rem
+
+        .tombol-simpan
+            position: absolute
+            left: 10px
+            right: 10px
+            bottom: 10px
+
+            z-index: 1
+
+            button
+                width: 100%
+
+                background: #1A8DF8
+                color: #fff
+                font-weight: 600
+                font-size: 1.4rem
+
+                padding: .5em
+
+                border: none
+                border-radius: .5em
+
+                transition: background 300ms
+
+                &:hover
+                    cursor: pointer
+                    background: admin.$warna-biru
+
+.opacity-1
+    opacity: 1

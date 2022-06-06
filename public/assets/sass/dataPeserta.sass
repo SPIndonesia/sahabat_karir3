@@ -1,0 +1,157 @@
+@use 'modules/_admin' as admin
+@use 'components/input'
+
+.tabel thead .scroll-tabel-head
+    animation: animasiTr 1s forwards
+
+@keyframes animasiTr
+    50%
+        box-shadow: 0 2px 3px 2px #C8C8FF
+
+    100%
+        box-shadow: 0 0 0 0 transparent
+
+.konten
+    height: 80%
+    position: relative
+
+    .judul
+        padding: 0 0 20px 0
+
+    h1
+        font-size: 2rem
+        color: admin.$warna-biru
+
+    table
+        width: 100%
+
+    th, td
+        padding: 10px
+        text-align: left
+        vertical-align: middle
+
+        font-size: 1.2rem
+
+    th
+        font-weight: bold
+
+    tr
+        border-bottom: 1px solid #66B3FA
+
+    thead tr
+        background-color: #D9ECFE
+
+    svg
+        color: #DB0000
+        width: 20px
+        height: 20px
+
+        transition: color 300ms
+
+        &:hover
+            cursor: pointer
+            color: #FF2424
+
+@media screen
+    .data-peserta
+        @include admin.kontenAdmin()
+
+        &>div
+            border-radius: 10px
+            padding: 20px
+            box-sizing: border-box
+            box-shadow: 0 0 3px 1px #ccc
+            margin-bottom: 2em
+            background-color: #fff
+
+    .sec-one
+        form
+            display: flex
+            justify-content: space-between
+            height: 30px
+
+            column-gap: 20px
+
+            &>div
+                position: relative
+                display: flex
+
+                background-color: #fff
+                border: 1px solid #ccc
+                border-radius: 3px
+
+            input
+                @include input.input()
+
+            .svg-pencarian
+                position: absolute
+                right: 10px
+                top: 50%
+                transform: translateY(-50%)
+
+            svg
+                width: 15px
+                height: 15px
+                color: admin.$warna-biru
+
+            svg:hover
+                cursor: pointer
+
+        .cari
+            width: 60%
+
+        .print
+            border: none
+            column-gap: 10px
+
+            align-items: center
+            justify-content: right
+
+            h2
+                height: fit-content
+                font-size: 1.4rem
+                color: #999
+                transition: color 300ms
+
+            &:hover
+                cursor: pointer
+
+                h2
+                    color: #555
+
+        .print, .date
+            flex: 1 1 150px
+
+    .sec-two .tabel
+        height: 75%
+        overflow-y: auto
+
+        thead tr
+            position: sticky
+            top: 0
+
+    .next-prev
+        position: absolute
+        bottom: 15px
+        right: 15px
+
+        a
+            display: inline-block
+            padding: 10px 20px
+            color: #555
+
+            border: 1px solid #8080FF
+            color: #8300FF
+            border-radius: 5px
+
+            transition: background-color 300ms
+
+        a:first-child
+            margin-right: 10px
+
+        a:hover
+            background-color: #EDEDFF
+
+@media print
+    header, nav, .sec-one, .next-prev
+        display: none !important

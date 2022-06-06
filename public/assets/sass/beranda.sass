@@ -1,0 +1,76 @@
+@use 'modules/_admin' as admin
+@use 'components/kartu'
+
+.konten-beranda
+    @include admin.kontenAdmin()
+
+// TODO: Sec Two
+.sec-one
+    display: flex
+    gap: 10px
+    width: 100%
+    margin-bottom: 30px
+
+    .kartu
+        width: 25%
+        padding: 10px 20px
+        box-sizing: border-box
+        display: flex
+        justify-content: space-between
+
+    .info
+        .icon
+            height: 100px
+
+            img
+                height: 70px
+
+        h1
+            font-size: 2rem
+            color: admin.$warna-biru
+
+        p
+            font-size: 1.2rem
+
+// TODO: Sec One
+.sec-two
+    padding: 20px
+
+    .judul h1
+        font-size: 2rem
+        font-weight: bold
+        color: admin.$warna-biru
+
+    .konten
+        display: flex
+        column-gap: 40px
+
+    // TODO: Bagan
+    #bagan
+        width: 80%
+        height: 500px
+
+    // TODO: List Kategori
+    .list-kategori
+        form
+            margin-bottom: 50px
+
+        select
+            border: none
+            border-bottom: 1px solid #999
+            padding: .5em 1em
+
+            &:focus
+                outline: none
+
+        ul li
+            position: relative
+            margin-bottom: 10px
+
+            &::after
+                content: ''
+                position: absolute
+                right: calc( 100% + 10px )
+                width: 15px
+                height: 100%
+                background-color: var(--warna-kotak)

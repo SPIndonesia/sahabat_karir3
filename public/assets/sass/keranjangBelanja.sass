@@ -1,0 +1,145 @@
+@use 'modules/_keranjang.payment' as template
+
+.tombol
+    background-color: red
+    border-radius: 100px
+    padding: 1em 2em
+    margin: 1em
+    color: #fff
+    box-sizing: border-box
+    font-size: 1.1rem
+
+button.tombol
+    border: none
+    font-family: inherit
+    background-color: template.$warna-biru
+
+#keranjangBelanja
+    width: 80%
+    margin: auto
+    padding: 2em 0
+    max-height: 90vh
+
+    .list-produk-dipilih
+        box-shadow: 0 0 5px 0 #aaa
+        padding: 4em
+        min-height: 60vh
+        position: relative
+
+.pencarian
+    width: 100%
+    margin-bottom: 4em
+
+    display: flex
+    align-items: center
+
+    .judul, form
+        flex: 1
+
+    .judul
+        margin-right: 1px solid #ccc
+
+        h1
+            color: template.$warna-biru
+            font-size: 2.5rem
+            font-weight: 600
+
+    form
+        position: relative
+
+        input
+            width: 100%
+            height: 2em
+            box-sizing: border-box
+
+        input:focus
+            box-shadow: 0 0 7px 3px template.$warna-biru-dua
+            outline: none
+            border-color: transparent
+
+        svg
+            position: absolute
+            right: 1em
+            top: 50%
+            transform: translateY(-50%)
+
+            color: template.$warna-biru
+
+            width: 1.5em
+            height: 1.5em
+
+.list-produk-dipilih .list-produk
+    max-height: 50vh
+    overflow-y: auto
+    padding: 2em
+    box-sizing: border-box
+
+    ul
+        box-shadow: 0 0 5px 0 #aaa
+        border-radius: 1em
+        padding: 1.5em
+
+        display: grid
+        align-items: center
+        grid-template-columns: 5em repeat(3, 1fr)
+        justify-content: space-between
+        margin-bottom: 2em
+
+        input[type="checkbox"]
+            width: 1.2em
+            height: 1.2em
+
+        .hapus
+            justify-self: end
+
+.list-produk .icon-nama
+    display: flex
+    align-items: center
+
+.icon-pelatihan img
+    width: 100px
+
+.nama-pelatihan h3
+    font-size: 2rem
+
+.nama-pelatihan p
+    font-size: 1.2rem
+    color: #999
+
+.harga p
+    color: #ED0000
+    font-size: 1.5rem
+    font-weight: bold
+    letter-spacing: .12em
+
+.go-checkout
+    position: absolute
+    left: 0
+    right: 0
+    bottom: 0
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: inherit
+
+    .total
+        font-size: 1.2em
+        font-weight: bold
+
+        span:last-child
+            color: #ED0000
+
+    .pilih-semua
+        width: 10em
+        display: flex
+        align-items: center
+        font-size: 1.2rem
+        column-gap: .5em
+        font-weight: bold
+
+    .hapus-checkout button
+        transition: background-color .3s
+
+    .hapus-checkout button:hover
+        cursor: pointer
+        background-color: template.$warna-biru-dua
