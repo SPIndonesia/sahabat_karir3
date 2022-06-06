@@ -16,74 +16,56 @@ body
     &>div
         margin-bottom: 50px
 
+header, .header-left, .header-right
+    display: flex
+    align-items: center
+    column-gap: 2rem
+
 header
-    width: 100%
-    height: $tinggi-header
+    justify-content: space-between
+    padding: 2rem 4rem
+
     position: sticky
     top: 0
-    transition: .3s
-    align-items: center
-    padding: 1em 2em
-    box-sizing: border-box
+    z-index: 999999999
+
     background-color: #fff
-    z-index: 99
-
-.header-shadow
-    box-shadow: 0 1px 5px 0 rgba(153, 153, 153, .4)
-
-// TODO: Logo
-.sahabat-karir-logo img
-    height: calc($tinggi-header - 20px)
-
-// TODO: Navigasi
-.navigasi-halaman-landing
-    width: 40%
-    display: flex
-    align-items: center
 
     a
-        margin-right: 20px
-        padding: .3em
+        margin-right: 2rem
 
-// TODO: Pencarian
-.pencarian
-    width: calc(60% - $tinggi-header)
-    position: relative
-    display: flex
-    align-items: center
+.logo img
+    height: calc( $tinggi-header - 2rem )
 
-    input
-        width: 100%
-        max-height: 30px
-        padding: 10px
+.tombol
+
+    .logout
+        background-color: #7707E3
+
+    .admin
+        background-color: #FF7F00
+
+    a
+        padding: 1rem 3rem
         box-sizing: border-box
-        border: 1px solid rgba(153, 153, 153, .5)
+        background-color: #2D96F9
+        color: #fff
 
-    input:focus
-        outline: 2px solid rgba(7, 121, 228, .5)
+        border-radius: 5px
+        transition: background-color 300ms
 
-    svg
-        position: absolute
-        fill: $warna-biru
-        width: 20px
-        top: 50%
-        right: 10px
-        transform: translateY(-50%)
+        &:hover
+            background-color: $warna-biru
 
-    svg:hover
-        cursor: pointer
-        fill: rgba(7, 121, 228, .7)
+.keranjang
+    color: #2D96F9
 
-// TODO: Keranjang
-.keranjang-belanja
-    width: 2em
-    height: 2em
-    margin-left: 2em
-
-    svg
-        width: inherit
-        height: inherit
+    &:hover
         color: $warna-biru
+
+    svg
+        width: 30px
+        height: 30px
 
 // TODO: Footer
 footer
@@ -147,16 +129,8 @@ footer
 
 // TODO: Desktop
 @media screen and (min-width:992px)
-
-    // TODO: Header
-    .sahabat-karir-logo
-        width: $tinggi-header
-
-    .hamburger-navigasi
-        display: none
-
     // TODO: Navigasi
-    .navigasi-halaman-landing a
+    .nav-header a
         background-image: linear-gradient(transparent 0%, transparent 90%, rgba(7, 121, 228, .5) 90%, rgba(7, 121, 228, .5) 100%)
         background-repeat: no-repeat
         background-size: 0% 100%
@@ -174,37 +148,9 @@ footer
 
 // Todo: Tab & Desktop
 @media screen and (min-width:768px)
-    .pembungkus-judul h1
-        font-size: 32px
-
-    // TODO: Header
-    header
-        display: flex
-
-    // TODO: Pencarian
-    .pencarian input
-        border-radius: 10px
 
 // TODO: Tab
 @media screen and (min-width:768px) and (max-width:992px)
-
-    // TODO: Header
-    header
-        justify-content: space-between
-
-    .sahabat-karir-logo
-        order: 1
-
-    // TODO: Navigasi
-    .navigasi-halaman-landing
-        width: 50%
-        order: 3
-
-    // TODO: Pencarian
-    .pencarian
-        order: 2
-        width: 80%
-
     // TODO: Footer
     .konten__footer
         grid-template-columns: repeat(3, 30%)
@@ -213,69 +159,10 @@ footer
 // TODO: Tab dan Mobile
 @media screen and (max-width:992px)
 
-    // TODO: Header
-    .navigasi-halaman-landing
-        height: 0
-        position: absolute
-        top: $tinggi-header
-        right: 0
-        background-color: #fff
-        flex-direction: column
-        align-items: baseline
-        justify-content: space-between
-        padding: 0 20px
-        box-sizing: border-box
-        overflow: hidden
-        transition: .3s
-        border-bottom-left-radius: 10px
-        box-shadow: 0 0 5px 0 rgba(153, 153, 153, .5)
-        z-index: 999
-
-    // TODO: Navigasi
-    .lihat-navigasi
-        height: 150px
-        padding: 20px
-
-    .navigasi-halaman-landing a
-        display: block
-        width: fit-content
-
-    .hamburger-navigasi
-        display: initial
-        order: 4
-        width: min-content
-
-    svg
-        width: 28px
-
 // TODO: Mobile
 @media screen and (max-width:768px)
     #halaman-landing
         margin-top: 50px
-
-    .pembungkus-judul h1
-        font-size: 26px
-
-    // TODO: Header
-    header
-        display: grid
-        grid-template-areas: "logo hamburger" "pencarian pencarian"
-
-    .sahabat-karir-logo
-        grid-area: logo
-
-    .pencarian
-        width: 80%
-        grid-area: pencarian
-        justify-self: end
-        margin-top: 10px
-
-    .navigasi-halaman-landing
-        width: 80%
-
-    .hamburger-navigasi
-        grid-area: hamburger
-        justify-self: end
 
     // TODO: Footer
     footer
