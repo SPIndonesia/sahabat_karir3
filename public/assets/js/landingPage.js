@@ -14,6 +14,18 @@ navHalLanding.map(e => {
     })
 })
 
+// -- Mobile
+const tombol = document.querySelector('.tombol')
+
+document.addEventListener('click', e => {
+    if (!e.target.contains(document.querySelector('.tombol'))) {
+        tombol.classList.add('tombol-tampil')
+        return
+    }
+
+    tombol.classList.remove('tombol-tampil')
+})
+
 /* ----------------------------------------------------------------------------------------------
  * Konten
  * ----------------------------------------------------------------------------------------------
@@ -29,19 +41,19 @@ const slickDefault = function (kelas) {
         dots: true,
         arrows: false,
         responsive: [{
-            breakpoint: 992,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
             }
-        },
-        {
-            breakpoint: 768,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1
-            }
-        }
         ]
     })
 }

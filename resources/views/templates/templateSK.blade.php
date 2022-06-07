@@ -38,6 +38,16 @@
         </div>
 
         <div class="header-right">
+            <div class="aksi">
+                <div class="user-icon">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+                <div class="dropdown">
+                    <i class="fa-solid fa-caret-down"></i>
+                </div>
+            </div>
+
             <div class="tombol">
                 <a href="">Login</a>
                 <a href="">Register</a>
