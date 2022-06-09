@@ -5,20 +5,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAHABAT KARIR</title>
-
     <script src="https://kit.fontawesome.com/02db274a60.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://app.midtrans.com/snap/snap.js"
+        data-client-key="<Mid-client-j6xwra16OXDlv3sl>"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
-    <script type="text/javascript" src="https://app.midtrans.com/snap/snap.js" data-client-key="<Mid-client-j6xwra16OXDlv3sl>"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <!-- --------------- icon website --------------- -->
+
+
+
+    <title>
+        <?= $judul ?>
+    </title>
     <link rel="shortcut icon" href="{{asset('assets/img/icon/logo-sk.png')}}">
 
-    <!-- --------------- slick slider --------------- -->
+
+
+    {{--------------------------- External css ---------------------------}}
     <link rel="stylesheet" href="{{asset('assets/css/slick.css')}}">
 
-    <!-- --------------- css --------------- -->
-    <link rel="stylesheet" href="{{asset('assets/css/landingPage.css')}}">
+    {{--------------------------- My css ---------------------------}}
+    <link rel="stylesheet" href="{{asset('assets/css/templates/home.css')}}">
+    @if ($css)
+    @foreach ($css as $s)
+    <link rel="stylesheet" href="{{ asset('assets/css/' . $s . '.css') }}">
+    @endforeach
+    @endif
 </head>
 
 <body>
@@ -142,12 +154,14 @@
 
                 <ul>
                     <li class="email">
-                        <a target="_blank" href="mailto:sahabatprofesionalindonesia@gmail.com">sahabatprofesionalindonesia@gmail.com</a>
+                        <a target="_blank"
+                            href="mailto:sahabatprofesionalindonesia@gmail.com">sahabatprofesionalindonesia@gmail.com</a>
                     </li>
 
                     <li class="lokasi">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
-                            <path d="M168.3 499.2C116.1 435 0 279.4 0 192C0 85.96 85.96 0 192 0C298 0 384 85.96 384 192C384 279.4 267 435 215.7 499.2C203.4 514.5 180.6 514.5 168.3 499.2H168.3zM192 256C227.3 256 256 227.3 256 192C256 156.7 227.3 128 192 128C156.7 128 128 156.7 128 192C128 227.3 156.7 256 192 256z" />
+                            <path
+                                d="M168.3 499.2C116.1 435 0 279.4 0 192C0 85.96 85.96 0 192 0C298 0 384 85.96 384 192C384 279.4 267 435 215.7 499.2C203.4 514.5 180.6 514.5 168.3 499.2H168.3zM192 256C227.3 256 256 227.3 256 192C256 156.7 227.3 128 192 128C156.7 128 128 156.7 128 192C128 227.3 156.7 256 192 256z" />
                         </svg>
                         <p>
                             Jalan Kerapu Nomor 44 Kelurahan Berkas Kecamatan Teluk Segara Kota Bengkulu
@@ -157,13 +171,15 @@
             </div>
         </div>
     </footer>
-
-    <!-- --------------- jquery - slick - slider --------------- -->
     <script src="{{asset('assets/js/jquery-3.6.0.min.js')}}"></script>
     <script src="{{asset('assets/js/slick.min.js')}}"></script>
 
-    <!-- --------------- js --------------- -->
-    <script src="{{asset('assets/js/landingPage.js')}}"></script>
+    {{--------------------------- My js ---------------------------}}
+    @if ($js)
+    @foreach ($js as $sc)
+    <script src="{{ asset('assets/js/' . $sc . '.js') }}"></script>
+    @endforeach
+    @endif
 </body>
 
 </html>

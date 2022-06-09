@@ -52,6 +52,7 @@ class PembayaranController extends Controller
         $snapToken = \Midtrans\Snap::getSnapToken($params);
         return view('bayarpaket', ['snap_token' => $snapToken, 'data_paket' => $data_paket]);
     }
+
     public function paypost(Request $request, $id)
     {
         $data_peserta = User::where('id', Auth::user()->id)->first();
@@ -83,9 +84,11 @@ class PembayaranController extends Controller
             return redirect(url('/beranda'))->with('alert-failed', 'terjadi kesalahan');
         }
     }
+
     public function index()
     {
         $data_pembayaran = Pembayaran::all();
+
         $data = [
             'judul' => 'judul',
             'css' => 'pembayaran',

@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -15,12 +16,14 @@ class UserController extends Controller
     public function index()
     {
         $data_user = User::all();
+
         $data = [
             'judul' => 'Sahabat Karir | User',
             'css' => ['dataPeserta'],
             'js' => ['dataPeserta'],
             'data_user' => $data_user,
         ];
+
         return view('dataPeserta', $data);
     }
 

@@ -1,7 +1,4 @@
-@use 'modules/_reset'
-@use 'modules/_template' as template
-
-$shadow-default: 0 3px 3px 2px #eee
+@use '../../units/variables' as var
 
 .konten
     margin-bottom: 100px !important
@@ -13,7 +10,7 @@ $shadow-default: 0 3px 3px 2px #eee
     margin-bottom: 24px
 
     h1
-        color: template.$warna-biru
+        color: var.$warna-biru
         margin-bottom: 10px
         font-weight: bolder
 
@@ -75,7 +72,7 @@ img.konten-logo
 
     svg
         width: 20px
-        fill: template.$warna-biru
+        fill: var.$warna-biru
         opacity: .7
         transition: .3s
 
@@ -85,7 +82,7 @@ img.konten-logo
 // TODO: Tentang Kami
 .tentang-kami
     background-color: #fff
-    box-shadow: $shadow-default
+    box-shadow: var.$shadow-default
     border-radius: 20px
     padding: 20px
 
@@ -97,11 +94,11 @@ img.konten-logo
         text-align: center
         font-weight: bold
         font-size: 24px
-        color: template.$warna-biru
+        color: var.$warna-biru
 
     span
         display: grid
-        grid-template-columns: 50px auto
+        grid--columns: 50px auto
         height: 50px
         justify-items: center
         align-items: center
@@ -130,7 +127,7 @@ img.konten-logo
     gap: 20px
 
 .kartu
-    box-shadow: $shadow-default
+    box-shadow: var.$shadow-default
     padding: 10px
     box-sizing: border-box
     text-align: center
@@ -140,7 +137,7 @@ img.konten-logo
 
     h2
         font-weight: bold
-        color: template.$warna-biru
+        color: var.$warna-biru
         font-size: 25px
         margin: 20px 0
 
@@ -164,7 +161,7 @@ img.konten-logo
         font-size: 22px
 
     .info-pengguna h2:first-child
-        color: template.$warna-biru
+        color: var.$warna-biru
         letter-spacing: .05em
 
     .info-pengguna h2:nth-child(2)
@@ -186,7 +183,7 @@ img.konten-logo
 .konten__gabung-bersama-kami,
 .konten__cerita-dari-sahabat
     min-height: 200px
-    box-shadow: $shadow-default
+    box-shadow: var.$shadow-default
     margin: 20px
     padding: 20px
     box-sizing: border-box
@@ -197,7 +194,7 @@ img.konten-logo
     font-weight: bold
     font-size: 20px
     align-self: flex-end
-    color: template.$warna-biru
+    color: var.$warna-biru
     white-space: nowrap
 
 // TODO: Desktop
@@ -215,7 +212,7 @@ img.konten-logo
     // TODO: Konten Tentang Kami
     .konten__tentang-kami>div:first-child:after
         content: ''
-        background-color: template.$warna-biru
+        background-color: var.$warna-biru
         width: 3px
         position: absolute
         top: 0
@@ -225,7 +222,7 @@ img.konten-logo
 
     // TODO: Kenapa Harus Kami
     .pembungkus-konten__kenapa-harus-kami
-        grid-template-columns: repeat(3, minmax(180px, 430px))
+        grid--columns: repeat(3, minmax(180px, 430px))
 
 // TODO: Tab
 @media screen and (min-width:768px) and (max-width:992px)
@@ -236,7 +233,7 @@ img.konten-logo
 
     // TODO: Kenapa Harus Kami
     .pembungkus-konten__kenapa-harus-kami
-        grid-template-columns: repeat(2, 1fr)
+        grid--columns: repeat(2, 1fr)
 
 // TODO: Tab dan Mobile
 @media screen and (max-width:992px)
@@ -274,7 +271,7 @@ img.konten-logo
         flex-direction: column
 
         h2
-            border-bottom: 3px solid template.$warna-biru
+            border-bottom: 3px solid var.$warna-biru
 
         &>div
             margin-bottom: 50px
@@ -289,4 +286,4 @@ img.konten-logo
 
     // TODO: Kenapa Harus Kami
     .pembungkus-konten__kenapa-harus-kami
-        grid-template-columns: 1fr
+        grid--columns: 1fr

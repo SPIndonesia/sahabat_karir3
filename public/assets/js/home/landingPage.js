@@ -26,10 +26,7 @@ document.addEventListener('click', e => {
     tombol.classList.remove('tombol-tampil')
 })
 
-/* ----------------------------------------------------------------------------------------------
- * Konten
- * ----------------------------------------------------------------------------------------------
- */
+
 // TODO: Slick
 const slickDefault = function (kelas) {
     $(`.${kelas}`).slick({
@@ -92,9 +89,6 @@ $(document).ready(function () {
         e.style.display = 'none'
     })
 })
-
-
-
 
 // TODO: Rating
 window.addEventListener('load', () => {

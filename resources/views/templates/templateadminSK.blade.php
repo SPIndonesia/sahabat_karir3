@@ -10,6 +10,8 @@
     </title>
 
     <!-- --------------- css --------------- -->
+    <link rel="stylesheet" href="{{ asset('assets/css/templates/admin.css') }}">
+
     @foreach ($css as $style)
     <link rel="stylesheet" href="{{ asset('assets/css/'.$style.'.css') }}">
     @endforeach
@@ -42,7 +44,7 @@
     <section class="sec-beranda">
         <nav class="navigasi-beranda">
             <ul>
-                <li class="nav" data-target="beranda">
+                <li class="nav" data-target="admin/user">
                     <i class="fa-solid fa-house-user"></i>
                     <h2>Dashboard</h2>
                 </li>
@@ -56,16 +58,23 @@
                     <i class="fa-solid fa-layer-group"></i>
                     <h2>Kategori</h2>
                 </li>
-                {{--
-                <li class="nav" data-target="admin/pembayaran"> --}}
 
                 <li class="nav" data-target="admin/paket">
-                    <i class="fa-solid fa-layer-group"></i>
+                    <i class="fa-solid fa-box-archive"></i>
                     <h2>Paket</h2>
                 </li>
 
-                <li class="nav" data-target="pembayaran">
+                <li class="nav" data-target="admin/kelas">
+                    <i class="fa-solid fa-chalkboard-user"></i>
+                    <h2>Kelas</h2>
+                </li>
 
+                <li class="nav" data-target="admin/testimoni">
+                    <i class="fa-solid fa-star"></i>
+                    <h2>Testimoni</h2>
+                </li>
+
+                <li class="nav" data-target="pembayaran">
                     <i class="fa-solid fa-money-check-dollar"></i>
                     <h2>Pembayaran</h2>
                 </li>

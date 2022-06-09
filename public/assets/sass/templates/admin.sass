@@ -1,17 +1,15 @@
-@use '_reset'
+@use '../base/reset'
+
+@use '../units/variables' as var
 
 // TODO: Variable
-$tinggi-header: 80px
-$warna-biru: #0779e4
-$lebar-nav: 250px
-
 @mixin kontenAdmin()
-    width: calc( 100% - $lebar-nav )
+    width: calc( 100% - var.$lebar-nav )
     padding: 20px
     box-sizing: border-box
     margin-left: 50px
 
-    height: calc( 100vh - $tinggi-header )
+    height: calc( 100vh - var.$tinggi-header )
 
 // TODO: Header
 html
@@ -34,7 +32,7 @@ header, header>div
 header
     background-color: #fff
     width: 100%
-    height: $tinggi-header
+    height: var.$tinggi-header
     padding: 1em 2em
     box-sizing: border-box
 
@@ -50,13 +48,13 @@ header
 // TODO: Logo
 .sahabat-karir-logo
     img
-        height: calc($tinggi-header - 2em)
+        height: calc(var.$tinggi-header - 2em)
 
     h1
         white-space: nowrap
         font-size: 2.5rem
         font-weight: bold
-        color: $warna-biru
+        color: var.$warna-biru
 
 // TODO: Profil Admin
 .profil-admin
@@ -66,7 +64,7 @@ header
 
     h4
         font-size: 1.6rem
-        color: $warna-biru
+        color: var.$warna-biru
 
     p
         font-size: 1.2rem
@@ -80,7 +78,7 @@ header
 .navigasi-beranda
     position: relative
 
-    width: $lebar-nav
+    width: var.$lebar-nav
 
     ul
         position: fixed
@@ -102,11 +100,11 @@ header
 
     li:hover
         cursor: pointer
-        color: $warna-biru
+        color: var.$warna-biru
         background-color: #D9ECFE
 
     li.aktif
-        color: $warna-biru
+        color: var.$warna-biru
         background-color: #D9ECFE
 
     svg
