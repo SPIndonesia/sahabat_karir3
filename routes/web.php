@@ -15,10 +15,8 @@ use Illuminate\Support\Facades\Auth;
 // Route::delete('kategori/hapus/{id}', [KategoriController::class, 'hapus'])->name('kategori.hapus');
 
 Route::middleware(['auth', 'admin'])->group(function () {
-    Route::get('coba/admin', function () {
-        return 'home';
-    });
-    Route::get('/admin/user', [UserController::class, 'index']);
+
+    Route::get('/admin/user', [UserController::class, 'index'])->name('admin');
     Route::delete('/admin/user/delete/$id', [UserController::class, 'destroy'])->name('user.delete');
     Route::get('admin/kategori', [KategoriController::class, 'index']);
     Route::get('admin/paket', [PaketController::class, 'index']);
