@@ -17,11 +17,6 @@ class PembayaranController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    function pages($page, $data)
-    {
-        return view('admin/pembayaran/' . $page, $data);
-    }
-
     public function pay($id)
     {
         // Set your Merchant Server Key
@@ -62,10 +57,10 @@ class PembayaranController extends Controller
             'data_paket' => $data_paket
         ];
 
-        return $this->pages('bayarpaket', $data);
+        return view('midtrans/bayarPaket', $data);
     }
 
-    public function paypost(Request $request, $id)
+    public function payPost(Request $request, $id)
     {
         $data_peserta = User::where('id', Auth::user()->id)->first();
         $json = json_decode($request->get('json'));
@@ -111,12 +106,7 @@ class PembayaranController extends Controller
             'data_pembayaran' => $data_pembayaran,
         ];
 
-        return $this->pages('pembayaran', $data);
-    }
-
-    public function keranjang()
-    {
-        return $this->pages('keranjangBelanja', []);
+        return view('user/payment', $data);
     }
 
     /**

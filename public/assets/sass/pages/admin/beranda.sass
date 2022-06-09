@@ -1,10 +1,5 @@
-@use 'modules/_admin' as admin
-@use 'components/kartu'
+@use '../../units/variables' as var
 
-.konten-beranda
-    @include admin.kontenAdmin()
-
-// TODO: Sec Two
 .sec-one
     display: flex
     gap: 10px
@@ -27,7 +22,7 @@
 
         h1
             font-size: 2rem
-            color: admin.$warna-biru
+            color: var.$warna-biru
 
         p
             font-size: 1.2rem
@@ -39,7 +34,7 @@
     .judul h1
         font-size: 2rem
         font-weight: bold
-        color: admin.$warna-biru
+        color: var.$warna-biru
 
     .konten
         display: flex

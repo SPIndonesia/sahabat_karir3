@@ -1,12 +1,9 @@
-@use 'modules/_admin' as admin
-@use 'components/input'
-@use 'components/kartu'
+@use '../../components/input'
 
-.kategori
-    @include admin.kontenAdmin()
+@use '../../units/variables' as var
 
-    &>div
-        margin-bottom: 2em
+.kategori>div
+    margin-bottom: 2em
 
 .sec-one
     display: flex
@@ -20,7 +17,7 @@
     box-shadow: 0 2px 5px 1px #cacaca
 
     svg
-        color: admin.$warna-biru
+        color: var.$warna-biru
 
     .pencarian
         flex: 1
@@ -70,7 +67,7 @@
         margin-bottom: 2em
 
         h1
-            color: admin.$warna-biru
+            color: var.$warna-biru
             font-size: 3rem
 
         a
@@ -89,7 +86,7 @@
                 font-size: 3rem
 
             &:hover
-                background-color: admin.$warna-biru
+                background-color: var.$warna-biru
 
     .tabel
         overflow-x: auto
@@ -100,7 +97,7 @@
             min-width: 500px
 
         tr
-            border-bottom: 1px solid admin.$warna-biru
+            border-bottom: 1px solid var.$warna-biru
             border-collapse: collapse
 
         th
@@ -136,7 +133,7 @@
                 background-color: #0883F6
 
                 &:hover
-                    background-color: admin.$warna-biru
+                    background-color: var.$warna-biru
 
             .hapus
                 background-color: #FF2424
@@ -231,7 +228,7 @@
 
             font-size: 2rem
             font-weight: bold
-            color: admin.$warna-biru
+            color: var.$warna-biru
 
         .form
             li
@@ -272,7 +269,7 @@
 
                 &:hover
                     cursor: pointer
-                    background: admin.$warna-biru
+                    background: var.$warna-biru
 
 .opacity-1
     opacity: 1

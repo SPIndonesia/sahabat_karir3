@@ -9,7 +9,7 @@
     <title>{{ $judul }}</title>
 
     {{-------------- css --------------}}
-    <link rel="stylesheet" href="{{ asset('assets/css/pages/loginRegister.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/pages/home/loginRegister.css') }}">
 </head>
 
 <body>
@@ -24,6 +24,6 @@
 <script src="https://kit.fontawesome.com/02db274a60.js" crossorigin="anonymous"></script>
 
 {{-------------- js --------------}}
-<script src="assets/js/loginRegister.js"></script>
+<script src="assets/js/home/loginRegister.js"></script>
 
 </html>

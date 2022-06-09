@@ -8,16 +8,16 @@
     <title>Payment | SAHABAT KARIR</title>
 
     <!-- --------------- icon website --------------- -->
-    <link rel="shortcut icon" href="assets/img/icon/logo-sk.png">
+    <link rel="shortcut icon" href="{{ asset('assets/img/icon/logo-sk.png') }}">
 
     <!-- --------------- css --------------- -->
-    <link rel="stylesheet" href="assets/css/payment.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/pages/payment.css') }}">
 </head>
 
 <body>
     <header>
         <div class="sahabat-karir-logo">
-            <img src="assets/img/icon/logo-sk.png" alt="sahabat karir">
+            <img src="{{ asset('assets/img/icon/logo-sk.png') }}" alt="sahabat karir">
             <h2>SAHABAT KARIR</h2>
         </div>
     </header>
@@ -31,7 +31,7 @@
             <div class="list-kelas">
                 <div class="_kelas">
                     <div class="kelas">
-                        <img src="assets/img/landingPage/polri.png" alt="kelas" class="icon__kelas">
+                        <img src="{{ asset('assets/img/landingPage/polri.png') }}" alt="kelas" class="icon__kelas">
 
                         <div class="paket">
                             <p class="nama-kelas">Kelas SBMPTN</p>
@@ -50,7 +50,7 @@
                     </div>
 
                     <div class="kelas">
-                        <img src="assets/img/landingPage/polri.png" alt="kelas" class="icon__kelas">
+                        <img src="{{ asset('assets/img/landingPage/polri.png') }}" alt="kelas" class="icon__kelas">
 
                         <div class="paket">
                             <p class="nama-kelas">Kelas SBMPTN</p>
@@ -69,7 +69,7 @@
                     </div>
 
                     <div class="kelas">
-                        <img src="assets/img/landingPage/polri.png" alt="kelas" class="icon__kelas">
+                        <img src="{{ asset('assets/img/landingPage/polri.png') }}" alt="kelas" class="icon__kelas">
 
                         <div class="paket">
                             <p class="nama-kelas">Kelas SBMPTN</p>

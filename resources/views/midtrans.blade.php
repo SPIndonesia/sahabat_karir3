@@ -50,7 +50,6 @@
             document.getElementById('json_callback').value = JSON.stringify(result);
             document.getElementById('submit_form').submit()
         }
-
     </script>
 </body>
 

@@ -14,11 +14,6 @@ class KategoriController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    function pages($page, $data)
-    {
-        return view('admin/kategori/' . $page, $data);
-    }
-
     public function index()
     {
         $data_kategori = Kategori::all();
@@ -31,14 +26,14 @@ class KategoriController extends Controller
             ],
 
             'js' => [
-                'admin/kategori'
+                'kategori'
             ],
 
             'data_kategori' => $data_kategori,
         ];
 
 
-        return $this->pages('kategori', $data);
+        return $this->adminPages('kategori', $data);
     }
 
     /**

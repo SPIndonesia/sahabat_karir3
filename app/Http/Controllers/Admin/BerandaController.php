@@ -7,21 +7,20 @@ use Illuminate\Http\Request;
 
 class BerandaController extends Controller
 {
-    function pages($page, $data)
-    {
-        return view('admin/' . $page, $data);
-    }
-
     public function index()
     {
         $data = [
             'judul'     => 'Beranda Admin',
 
-            'css'       => [],
+            'css'       => [
+                'beranda'
+            ],
 
-            'js'        => []
+            'js'        => [
+                'beranda'
+            ]
         ];
 
-        return $this->pages('beranda', $data);
+        return $this->adminPages('beranda', $data);
     }
 }

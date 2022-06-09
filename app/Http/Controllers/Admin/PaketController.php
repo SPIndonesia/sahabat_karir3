@@ -33,7 +33,7 @@ class PaketController extends Controller
             ],
 
             'js' => [
-                'admin/paket'
+                'paket'
             ],
 
             'data_paket' => $data_paket,
@@ -41,7 +41,7 @@ class PaketController extends Controller
             'data_kategori' => $data_kategori,
         ];
 
-        return $this->pages('paket', $data);
+        return $this->adminPages('paket', $data);
     }
 
     /**

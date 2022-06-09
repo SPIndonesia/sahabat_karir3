@@ -1,5 +1,6 @@
-@use 'modules/_admin' as admin
-@use 'components/input'
+@use '../../components/input'
+
+@use '../../units/variables' as var
 
 .tabel thead .scroll-tabel-head
     animation: animasiTr 1s forwards
@@ -20,7 +21,7 @@
 
     h1
         font-size: 2rem
-        color: admin.$warna-biru
+        color: var.$warna-biru
 
     table
         width: 100%
@@ -54,8 +55,6 @@
 
 @media screen
     .data-peserta
-        @include admin.kontenAdmin()
-
         &>div
             border-radius: 10px
             padding: 20px
@@ -92,7 +91,7 @@
             svg
                 width: 15px
                 height: 15px
-                color: admin.$warna-biru
+                color: var.$warna-biru
 
             svg:hover
                 cursor: pointer

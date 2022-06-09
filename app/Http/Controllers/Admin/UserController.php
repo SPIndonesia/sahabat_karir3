@@ -20,8 +20,6 @@ class UserController extends Controller
 
     public function index()
     {
-        $data_user = User::all();
-
         $data = [
             'judul' => 'Sahabat Karir | User',
 
@@ -30,13 +28,13 @@ class UserController extends Controller
             ],
 
             'js' => [
-                'admin/dataPeserta'
+                'dataPeserta'
             ],
 
-            'data_user' => $data_user,
+            'data_user' => User::all(),
         ];
 
-        return $this->pages('dataPeserta', $data);
+        return $this->adminPages('dataPeserta', $data);
     }
 
     /**

@@ -5,23 +5,18 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class KelasController extends Controller
+class Pembayaran extends Controller
 {
-    function pages($page, $data)
-    {
-        return view('admin/kelas/' . $page, $data);
-    }
-
     public function index()
     {
         $data = [
-            'judul'         => 'Kelas Pelatihan | Admin',
+            'judul'         => 'Sahabat Karir | Pembayaran',
 
             'css'           => [],
 
             'js'            => []
         ];
 
-        return $this->adminPages('kelas', $data);
+        return $this->adminPages('pembayaran', $data);
     }
 }
