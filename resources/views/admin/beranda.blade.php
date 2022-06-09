@@ -1,4 +1,4 @@
-@extends('templates.templateAdminSK')
+@extends('templates.templateadminSK')
 
 @section('content')
 

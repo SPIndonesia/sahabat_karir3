@@ -8,16 +8,16 @@
     <title>Payment | SAHABAT KARIR</title>
 
     <!-- --------------- icon website --------------- -->
-    <link rel="shortcut icon" href="assets/img/icon/logo-sk.png">
+    <link rel="shortcut icon" href="{{ asset('assets/img/icon/logo-sk.png') }}">
 
     <!-- --------------- css --------------- -->
-    <link rel="stylesheet" href="assets/css/keranjangBelanja.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/keranjangBelanja.css')}}">
 </head>
 
 <body>
     <header>
         <div class="sahabat-karir-logo">
-            <img src="assets/img/icon/logo-sk.png" alt="sahabat karir">
+            <img src="{{ asset('assets/img/icon/logo-sk.png') }}" alt="sahabat karir">
             <h2>SAHABAT KARIR</h2>
         </div>
     </header>
@@ -43,7 +43,7 @@
 
                     <li class="icon-nama">
                         <div class="icon-pelatihan">
-                            <img src="assets/img/landingPage/cpns.png" alt="pelatihan sahabat karir">
+                            <img src="{{ asset('assets/img/landingPage/cpns.png') }}" alt="pelatihan sahabat karir">
                         </div>
 
                         <div class="nama-pelatihan">
@@ -68,7 +68,7 @@
 
                     <li class="icon-nama">
                         <div class="icon-pelatihan">
-                            <img src="assets/img/landingPage/cpns.png" alt="pelatihan sahabat karir">
+                            <img src="{{ asset('assets/img/landingPage/cpns.png') }}" alt="pelatihan sahabat karir">
                         </div>
 
                         <div class="nama-pelatihan">
@@ -93,7 +93,7 @@
 
                     <li class="icon-nama">
                         <div class="icon-pelatihan">
-                            <img src="assets/img/landingPage/cpns.png" alt="pelatihan sahabat karir">
+                            <img src="{{ asset('assets/img/landingPage/cpns.png') }}" alt="pelatihan sahabat karir">
                         </div>
 
                         <div class="nama-pelatihan">
@@ -118,7 +118,7 @@
 
                     <li class="icon-nama">
                         <div class="icon-pelatihan">
-                            <img src="assets/img/landingPage/cpns.png" alt="pelatihan sahabat karir">
+                            <img src="{{ asset('assets/img/landingPage/cpns.png') }}" alt="pelatihan sahabat karir">
                         </div>
 
                         <div class="nama-pelatihan">
@@ -143,7 +143,7 @@
 
                     <li class="icon-nama">
                         <div class="icon-pelatihan">
-                            <img src="assets/img/landingPage/cpns.png" alt="pelatihan sahabat karir">
+                            <img src="{{ asset('assets/img/landingPage/cpns.png') }}" alt="pelatihan sahabat karir">
                         </div>
 
                         <div class="nama-pelatihan">
@@ -168,7 +168,7 @@
 
                     <li class="icon-nama">
                         <div class="icon-pelatihan">
-                            <img src="assets/img/landingPage/cpns.png" alt="pelatihan sahabat karir">
+                            <img src="{{ asset('assets/img/landingPage/cpns.png') }}" alt="pelatihan sahabat karir">
                         </div>
 
                         <div class="nama-pelatihan">
@@ -193,7 +193,7 @@
 
                     <li class="icon-nama">
                         <div class="icon-pelatihan">
-                            <img src="assets/img/landingPage/cpns.png" alt="pelatihan sahabat karir">
+                            <img src="{{ asset('assets/img/landingPage/cpns.png') }}" alt="pelatihan sahabat karir">
                         </div>
 
                         <div class="nama-pelatihan">
@@ -218,7 +218,7 @@
 
                     <li class="icon-nama">
                         <div class="icon-pelatihan">
-                            <img src="assets/img/landingPage/cpns.png" alt="pelatihan sahabat karir">
+                            <img src="{{ asset('assets/img/landingPage/cpns.png') }}" alt="pelatihan sahabat karir">
                         </div>
 
                         <div class="nama-pelatihan">
@@ -243,7 +243,7 @@
 
                     <li class="icon-nama">
                         <div class="icon-pelatihan">
-                            <img src="assets/img/landingPage/cpns.png" alt="pelatihan sahabat karir">
+                            <img src="{{ asset('assets/img/landingPage/cpns.png') }}" alt="pelatihan sahabat karir">
                         </div>
 
                         <div class="nama-pelatihan">

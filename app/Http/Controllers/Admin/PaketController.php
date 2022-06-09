@@ -15,19 +15,33 @@ class PaketController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    function pages($page, $data)
+    {
+        return view('admin/paket/' . $page, $data);
+    }
+
     public function index()
     {
         $data_paket = Paket::all();
         $data_kategori = Kategori::all();
+
         $data = [
             'judul' => 'Sahabat Karir | Paket',
-            'css' => ['paket'],
-            'js' => ['paket'],
+
+            'css' => [
+                'paket'
+            ],
+
+            'js' => [
+                'admin/paket'
+            ],
+
             'data_paket' => $data_paket,
+
             'data_kategori' => $data_kategori,
         ];
 
-        return view('paket', $data);
+        return $this->pages('paket', $data);
     }
 
     /**

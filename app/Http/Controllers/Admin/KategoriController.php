@@ -14,18 +14,31 @@ class KategoriController extends Controller
      * @return \Illuminate\Http\Response
      */
 
+    function pages($page, $data)
+    {
+        return view('admin/kategori/' . $page, $data);
+    }
+
     public function index()
     {
         $data_kategori = Kategori::all();
+
         $data = [
             'judul' => 'Sahabat Karir | Kategori',
-            'css' => ['kategori'],
-            'js' => ['kategori'],
+
+            'css' => [
+                'kategori'
+            ],
+
+            'js' => [
+                'admin/kategori'
+            ],
+
             'data_kategori' => $data_kategori,
         ];
 
 
-        return view('kategori', $data);
+        return $this->pages('kategori', $data);
     }
 
     /**
@@ -35,7 +48,7 @@ class KategoriController extends Controller
      */
     public function create()
     {
-        return view('tambah');
+        // 
     }
 
     /**
@@ -74,6 +87,7 @@ class KategoriController extends Controller
      */
     public function edit(Kategori $kategori)
     {
+        // 
     }
 
     /**

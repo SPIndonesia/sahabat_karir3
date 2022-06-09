@@ -13,18 +13,30 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    function pages($page, $data)
+    {
+        return view('admin/dataPeserta/' . $page, $data);
+    }
+
     public function index()
     {
         $data_user = User::all();
 
         $data = [
             'judul' => 'Sahabat Karir | User',
-            'css' => ['dataPeserta'],
-            'js' => ['dataPeserta'],
+
+            'css' => [
+                'dataPeserta'
+            ],
+
+            'js' => [
+                'admin/dataPeserta'
+            ],
+
             'data_user' => $data_user,
         ];
 
-        return view('dataPeserta', $data);
+        return $this->pages('dataPeserta', $data);
     }
 
     /**

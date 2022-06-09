@@ -17,6 +17,11 @@ class PembayaranController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    function pages($page, $data)
+    {
+        return view('admin/pembayaran/' . $page, $data);
+    }
+
     public function pay($id)
     {
         // Set your Merchant Server Key
@@ -29,6 +34,7 @@ class PembayaranController extends Controller
         \Midtrans\Config::$is3ds = true;
         $data_peserta = User::where('id', Auth::user()->id)->first();
         $data_paket = Paket::where('id_paket', $id)->first();
+
         $params = array(
             'transaction_details' => array(
                 'order_id' => rand(),
@@ -50,7 +56,13 @@ class PembayaranController extends Controller
         );
 
         $snapToken = \Midtrans\Snap::getSnapToken($params);
-        return view('bayarpaket', ['snap_token' => $snapToken, 'data_paket' => $data_paket]);
+
+        $data = [
+            'snap_token' => $snapToken,
+            'data_paket' => $data_paket
+        ];
+
+        return $this->pages('bayarpaket', $data);
     }
 
     public function paypost(Request $request, $id)
@@ -72,12 +84,15 @@ class PembayaranController extends Controller
         $userpaket->id_user = $data_peserta->id;
         $userpaket->id_paket = $id;
         $userpaket->id_pembayaran = $order->id_order;
+
         if ($json->transaction_status == 'settlement') {
             $userpaket->status = 'AKTIF';
         } else {
             $userpaket->status = 'TIDAK AKTIF';
         }
+
         $userpaket->save();
+
         if ($order->save()) {
             return redirect(url('/beranda'))->with('alert-success', 'order berhasil dibuat');
         } else {
@@ -96,7 +111,12 @@ class PembayaranController extends Controller
             'data_pembayaran' => $data_pembayaran,
         ];
 
-        return view('pembayaran', $data);
+        return $this->pages('pembayaran', $data);
+    }
+
+    public function keranjang()
+    {
+        return $this->pages('keranjangBelanja', []);
     }
 
     /**

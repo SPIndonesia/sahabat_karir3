@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\BerandaController;
 use App\Http\Controllers\Home;
 use App\Http\Controllers\Admin\KategoriController;
 use App\Http\Controllers\Admin\UserController;
@@ -20,8 +21,10 @@ Auth::routes();
 
 // TODO: Admin
 Route::middleware(['auth', 'admin'])->group(function () {
+    // -- Beranda
+    Route::get('/admin/beranda', [BerandaController::class, 'index']);
+
     // -- User
-    Route::get('/admin/pembayaran', [UserController::class, 'index']);
     Route::get('/admin/user', [UserController::class, 'index'])->name('admin');
     Route::delete('/admin/user/delete/$id', [UserController::class, 'destroy'])->name('user.delete');
 
@@ -39,6 +42,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
     // -- Pembayaran
     Route::get('/admin/pembayaran', [PembayaranController::class, 'index']);
+    Route::get('/admin/keranjang', [PembayaranController::class, 'keranjang']);
 
     // -- Kelas
     Route::get('/admin/kelas', [KelasController::class, 'index']);
@@ -49,6 +53,8 @@ Route::middleware(['auth', 'user'])->group(function () {
         return 'admin';
     });
 });
+
+// TODO: End Testing
 
 // Route::get('/pembayaran/{id}', [PembayaranController::class, 'pay'])->name('pay');
 // Route::post('/pembayaran/{id}', [PembayaranController::class, 'paypost'])->name('paypost');

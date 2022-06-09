@@ -49,7 +49,7 @@
                     <h2>Dashboard</h2>
                 </li>
 
-                <li class="nav" data-target="admin/user">
+                <li class="nav" data-target="admin/dataPeserta">
                     <i class="fa-solid fa-people-group"></i>
                     <h2>Data Peserta</h2>
                 </li>
