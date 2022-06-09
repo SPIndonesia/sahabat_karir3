@@ -13,6 +13,7 @@
     @foreach ($css as $style)
     <link rel="stylesheet" href="{{ asset('assets/css/'.$style.'.css') }}">
     @endforeach
+    <link rel="shortcut icon" href="{{asset('assets/img/icon/logo-sk.png')}}">
 </head>
 
 <body>
