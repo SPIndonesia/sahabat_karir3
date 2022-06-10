@@ -16,6 +16,8 @@ class CreateTbKategoriTable extends Migration
         Schema::create('tb_kategori', function (Blueprint $table) {
             $table->id('id_kategori');
             $table->string('nama');
+            $table->longText('deskripsi');
+            $table->string('image_url');
             $table->timestamps();
         });
     }

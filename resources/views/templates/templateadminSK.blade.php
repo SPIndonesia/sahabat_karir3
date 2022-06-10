@@ -8,23 +8,24 @@
     <title>
         {{ $judul }}
     </title>
-
-    <!-- --------------- css --------------- -->
-    @foreach ($css as $style)
-    <link rel="stylesheet" href="{{ asset('assets/css/'.$style.'.css') }}">
-    @endforeach
     <link rel="shortcut icon" href="{{asset('assets/img/icon/logo-sk.png')}}">
+
+    {{------------------------ My css ------------------------}}
+    <link rel="stylesheet" href="{{ asset('assets/css/templates/admin.css') }}">
+
+    @if ($css)
+    @foreach ($css as $s)
+    <link rel="stylesheet" href="{{ asset('assets/css/pages/admin/'.$s.'.css') }}">
+    @endforeach
+    @endif
 </head>
 
 <body>
     <header>
-        <div class="sahabat-karir-logo">
-            <img src="{{ asset('assets/img/icon/logo-sk.png') }}" alt="sahabat karir">
-            <h1>Sahabat Karir</h1>
-        </div>
-
         <div class="profil-admin">
-            <i class="fa-solid fa-bell"></i>
+            <div class="notifi">
+                <i class="fa-solid fa-bell"></i>
+            </div>
 
             <div class="info-admin">
                 <div class="foto-admin">
@@ -39,54 +40,62 @@
         </div>
     </header>
 
-    <section class="sec-beranda">
-        <nav class="navigasi-beranda">
-            <ul>
-                <li class="nav" data-target="beranda">
-                    <i class="fa-solid fa-house-user"></i>
-                    <h2>Dashboard</h2>
-                </li>
+    <nav class="navigasi-admin">
+        <div class="logo">
+            <img src="{{ asset('assets/img/icon/logo-sk.png') }}" alt="sahabat karir">
+            <h1>Sahabat Karir</h1>
+        </div>
 
-                <li class="nav" data-target="admin/user">
-                    <i class="fa-solid fa-people-group"></i>
-                    <h2>Data Peserta</h2>
-                </li>
+        <a href="/admin/beranda">
+            <i class="fa-solid fa-house-user"></i>
+            <h2>Beranda</h2>
+        </a>
 
-                <li class="nav" data-target="admin/kategori">
-                    <i class="fa-solid fa-layer-group"></i>
-                    <h2>Kategori</h2>
-                </li>
-                {{--
-                <li class="nav" data-target="admin/pembayaran"> --}}
+        <a href="/admin/user">
+            <i class="fa-solid fa-people-group"></i>
+            <h2>Data Peserta</h2>
+        </a>
 
-                <li class="nav" data-target="admin/paket">
-                    <i class="fa-solid fa-layer-group"></i>
-                    <h2>Paket</h2>
-                </li>
+        <a href="/admin/kategori">
+            <i class="fa-solid fa-layer-group"></i>
+            <h2>Kategori</h2>
+        </a>
 
-                <li class="nav" data-target="pembayaran">
+        <a href="/admin/paket">
+            <i class="fa-solid fa-box-archive"></i>
+            <h2>Paket</h2>
+        </a>
 
-                    <i class="fa-solid fa-money-check-dollar"></i>
-                    <h2>Pembayaran</h2>
-                </li>
-            </ul>
-        </nav>
+        <a href="/admin/kelas">
+            <i class="fa-solid fa-chalkboard-user"></i>
+            <h2>Kelas</h2>
+        </a>
 
+        <a href="/admin/testimoni">
+            <i class="fa-solid fa-star"></i>
+            <h2>Testimoni</h2>
+        </a>
+
+        <a href="/admin/pembayaran">
+            <i class="fa-solid fa-money-check-dollar"></i>
+            <h2>Pembayaran</h2>
+        </a>
+    </nav>
+
+    <div class="content">
         @yield('content')
+    </div>
 
-    </section>
-
-    <!-- --------------- js --------------- -->
     <script src="{{ asset('assets/js/sweetalert2.all.min.js') }}"> </script>
     <script src="https://kit.fontawesome.com/02db274a60.js" crossorigin="anonymous"></script>
 
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
-    <script src="{{ asset('assets/js/template.js') }}"></script>
+    <script src="{{ asset('assets/js/admin/template.js') }}"></script>
 
-
-    @foreach ($js as $script)
-    <script src="{{ asset('assets/js/'. $script.'.js') }}"></script>
+    {{---------------------------- My script ----------------------------}}
+    @foreach ($js as $sc)
+    <script src="{{ asset('assets/js/admin/'. $sc.'.js') }}"></script>
     @endforeach
 </body>
 

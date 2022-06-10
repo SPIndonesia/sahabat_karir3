@@ -29,6 +29,7 @@ class PembayaranController extends Controller
         \Midtrans\Config::$is3ds = true;
         $data_peserta = User::where('id', Auth::user()->id)->first();
         $data_paket = Paket::where('id_paket', $id)->first();
+
         $params = array(
             'transaction_details' => array(
                 'order_id' => rand(),
@@ -50,9 +51,16 @@ class PembayaranController extends Controller
         );
 
         $snapToken = \Midtrans\Snap::getSnapToken($params);
-        return view('bayarpaket', ['snap_token' => $snapToken, 'data_paket' => $data_paket]);
+
+        $data = [
+            'snap_token' => $snapToken,
+            'data_paket' => $data_paket
+        ];
+
+        return view('midtrans/bayarPaket', $data);
     }
-    public function paypost(Request $request, $id)
+
+    public function payPost(Request $request, $id)
     {
         $data_peserta = User::where('id', Auth::user()->id)->first();
         $json = json_decode($request->get('json'));
@@ -71,21 +79,26 @@ class PembayaranController extends Controller
         $userpaket->id_user = $data_peserta->id;
         $userpaket->id_paket = $id;
         $userpaket->id_pembayaran = $order->id_order;
+
         if ($json->transaction_status == 'settlement') {
             $userpaket->status = 'AKTIF';
         } else {
             $userpaket->status = 'TIDAK AKTIF';
         }
+
         $userpaket->save();
+
         if ($order->save()) {
             return redirect(url('/beranda'))->with('alert-success', 'order berhasil dibuat');
         } else {
             return redirect(url('/beranda'))->with('alert-failed', 'terjadi kesalahan');
         }
     }
+
     public function index()
     {
         $data_pembayaran = Pembayaran::all();
+
         $data = [
             'judul' => 'judul',
             'css' => 'pembayaran',
@@ -93,7 +106,7 @@ class PembayaranController extends Controller
             'data_pembayaran' => $data_pembayaran,
         ];
 
-        return view('pembayaran', $data);
+        return view('user/payment', $data);
     }
 
     /**
