@@ -55,7 +55,7 @@ class KategoriController extends Controller
     public function store(Request $request)
     {
 
-        $imageName = time() . $request->file('gambar_kategori')->extension();
+        $imageName = time() . '.' . $request->file('gambar_kategori')->extension();
         $request->file('file')->move(public_path('assets/img/kategori'), $imageName);
         $data = Kategori::create(
             [
@@ -100,7 +100,7 @@ class KategoriController extends Controller
 
     public function ubah(Request $request, $id)
     {
-        $imageName = time() . $request->file('gambar_kategori')->extension();
+        $imageName = time() . '.' . $request->file('gambar_kategori')->extension();
         $request->file('file')->move(public_path('assets/img/kategori'), $imageName);
         $data = Kategori::find($id)->update([
             'nama' => $request->nama,

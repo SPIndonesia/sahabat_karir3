@@ -18,11 +18,15 @@ class PaketSeeder extends Seeder
             [
                 [
                     'nama' => 'SBMPTN',
+                    'harga' => 10000,
                     'deskripsi' => "Lorem, ipsum dolor.",
+                    'id_kategori' => 1,
                     'image_url' => 'foto.png'
                 ], [
                     'nama' => 'ROUTE',
+                    'harga' => 10000,
                     'deskripsi' => "Lorem, ipsum dolor.",
+                    'id_kategori' => 1,
                     'image_url' => 'foto.png'
                 ]
 
