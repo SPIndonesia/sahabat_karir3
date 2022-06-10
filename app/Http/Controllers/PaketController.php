@@ -46,8 +46,8 @@ class PaketController extends Controller
      */
     public function store(Request $request)
     {
-        $imageName = time() . '.' . $request->file('file')->extension();
-        $request->file('file')->move(public_path('assets/Paket/'), $imageName);
+        // $imageName = time() . '.' . $request->file('file')->extension();
+        // $request->file('file')->move(public_path('assets/Paket/'), $imageName);
         $data = Paket::create([
             'nama' => $request->nama,
             'harga' => $request->harga,
@@ -89,8 +89,8 @@ class PaketController extends Controller
      */
     public function update(Request $request, Paket $paket, $id)
     {
-        $imageName = time() . '.' . $request->file('file')->extension();
-        $request->file('file')->move(public_path('assets/Kategori/'), $imageName);
+        // $imageName = time() . '.' . $request->file('file')->extension();
+        // $request->file('file')->move(public_path('assets/Kategori/'), $imageName);
         $data = Paket::find($id)->update([
             'nama' => $request->nama,
             'harga' => $request->harga,
