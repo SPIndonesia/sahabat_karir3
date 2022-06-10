@@ -46,6 +46,7 @@ class PaketController extends Controller
      */
     public function store(Request $request)
     {
+        // changed
         // $imageName = time() . '.' . $request->file('file')->extension();
         // $request->file('file')->move(public_path('assets/Paket/'), $imageName);
         $data = Paket::create([
