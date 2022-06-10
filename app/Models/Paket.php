@@ -11,7 +11,7 @@ class Paket extends Model
     protected $table = "tb_paket";
     protected $primaryKey = "id_paket";
     protected $fillable = [
-        'nama', 'harga', 'deskripsi', 'id_kategori', 'image_url'
+        'nama', 'harga', 'deskripsi', 'id_kategori', 'image_url',
     ];
     // public $timestamps = false;
 
