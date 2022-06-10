@@ -53,6 +53,11 @@ class PembayaranController extends Controller
         $snapToken = \Midtrans\Snap::getSnapToken($params);
 
         $data = [
+            'judul'     => 'SAHABAT KARIR',
+
+            'css'       => [],
+
+            'js'        => [],
             'snap_token' => $snapToken,
             'data_paket' => $data_paket
         ];
@@ -89,9 +94,9 @@ class PembayaranController extends Controller
         $userpaket->save();
 
         if ($order->save()) {
-            return redirect(url('/beranda'))->with('alert-success', 'order berhasil dibuat');
+            return redirect(url('/'))->with('alert-success', 'order berhasil dibuat');
         } else {
-            return redirect(url('/beranda'))->with('alert-failed', 'terjadi kesalahan');
+            return redirect(url('/'))->with('alert-failed', 'terjadi kesalahan');
         }
     }
 

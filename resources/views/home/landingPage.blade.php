@@ -51,12 +51,14 @@
     </div>
 
     <div class="pembungkus-konten__gabung-bersama-kami">
+        @foreach ($kategories as $kategori)
         <div class="konten__gabung-bersama-kami">
-            <img class="konten-logo" src="assets/img/landingPage/cpns.png" alt="kelas cpns">
-            <h1>Kelas CPNS</h1>
+            <img class="konten-logo" src="{{ asset('assets/img/kategori/' . $kategori->gambar_paket) }}"
+                alt="kelas cpns">
+            <h1>{{ $kategori->nama }}</h1>
             <div class="lihat-kelas">
-                <p>Ayo Belajar CPNS</p>
-                <a href="" title="Kunjungi">
+                <p>{{ $kategori->deskripsi }}</p>
+                <a href="{{ route('landingPaket', $kategori->id_kategori) }}" title="Kunjungi">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                         <path
                             d="M503.7 226.2l-176 151.1c-15.38 13.3-39.69 2.545-39.69-18.16V272.1C132.9 274.3 66.06 312.8 111.4 457.8c5.031 16.09-14.41 28.56-28.06 18.62C39.59 444.6 0 383.8 0 322.3c0-152.2 127.4-184.4 288-186.3V56.02c0-20.67 24.28-31.46 39.69-18.16l176 151.1C514.8 199.4 514.8 216.6 503.7 226.2z" />
@@ -64,62 +66,7 @@
                 </a>
             </div>
         </div>
-
-        <div class="konten__gabung-bersama-kami">
-            <img class="konten-logo" src="assets/img/landingPage/polri.png" alt="kelas polri">
-            <h1>Kelas POLRI</h1>
-            <div class="lihat-kelas">
-                <p>Ayo Belajar POLRI</p>
-                <a href="" title="Kunjungi">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                        <path
-                            d="M503.7 226.2l-176 151.1c-15.38 13.3-39.69 2.545-39.69-18.16V272.1C132.9 274.3 66.06 312.8 111.4 457.8c5.031 16.09-14.41 28.56-28.06 18.62C39.59 444.6 0 383.8 0 322.3c0-152.2 127.4-184.4 288-186.3V56.02c0-20.67 24.28-31.46 39.69-18.16l176 151.1C514.8 199.4 514.8 216.6 503.7 226.2z" />
-                    </svg>
-                </a>
-            </div>
-        </div>
-
-        <div class="konten__gabung-bersama-kami">
-            <img class="konten-logo" src="assets/img/landingPage/ikadin.png" alt="kelas ikadin">
-            <h1>Kelas IKADIN</h1>
-            <div class="lihat-kelas">
-                <p>Ayo Belajar IKATAN DINAS</p>
-                <a href="" title="Kunjungi">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                        <path
-                            d="M503.7 226.2l-176 151.1c-15.38 13.3-39.69 2.545-39.69-18.16V272.1C132.9 274.3 66.06 312.8 111.4 457.8c5.031 16.09-14.41 28.56-28.06 18.62C39.59 444.6 0 383.8 0 322.3c0-152.2 127.4-184.4 288-186.3V56.02c0-20.67 24.28-31.46 39.69-18.16l176 151.1C514.8 199.4 514.8 216.6 503.7 226.2z" />
-                    </svg>
-                </a>
-            </div>
-        </div>
-
-        <div class="konten__gabung-bersama-kami">
-            <img class="konten-logo" src="assets/img/landingPage/sbmptn.png" alt="kelas sbmptn">
-            <h1>Kelas SBMPTN</h1>
-            <div class="lihat-kelas">
-                <p>Ayo Belajar SBMPTN</p>
-                <a href="" title="Kunjungi">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                        <path
-                            d="M503.7 226.2l-176 151.1c-15.38 13.3-39.69 2.545-39.69-18.16V272.1C132.9 274.3 66.06 312.8 111.4 457.8c5.031 16.09-14.41 28.56-28.06 18.62C39.59 444.6 0 383.8 0 322.3c0-152.2 127.4-184.4 288-186.3V56.02c0-20.67 24.28-31.46 39.69-18.16l176 151.1C514.8 199.4 514.8 216.6 503.7 226.2z" />
-                    </svg>
-                </a>
-            </div>
-        </div>
-
-        <div class="konten__gabung-bersama-kami">
-            <img class="konten-logo" src="assets/img/landingPage/pelatihan.png" alt="kelas pelatihan">
-            <h1>Kelas PELATIHAN</h1>
-            <div class="lihat-kelas">
-                <p>Ayo Ikuti PELATIHAN</p>
-                <a href="" title="Kunjungi">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                        <path
-                            d="M503.7 226.2l-176 151.1c-15.38 13.3-39.69 2.545-39.69-18.16V272.1C132.9 274.3 66.06 312.8 111.4 457.8c5.031 16.09-14.41 28.56-28.06 18.62C39.59 444.6 0 383.8 0 322.3c0-152.2 127.4-184.4 288-186.3V56.02c0-20.67 24.28-31.46 39.69-18.16l176 151.1C514.8 199.4 514.8 216.6 503.7 226.2z" />
-                    </svg>
-                </a>
-            </div>
-        </div>
+        @endforeach
     </div>
 </div>
 

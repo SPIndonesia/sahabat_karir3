@@ -13,7 +13,7 @@
             <button class="btn btn-primary" id="pay-button">
                 pay
             </button>
-            <form action="{{route('paypost',$data_paket->id_paket)}}" id="submit_form" method="post">
+            <form action="{{route('payPost',$data_paket->id_paket)}}" id="submit_form" method="post">
                 @csrf
                 <input type="hidden" name="json" id="json_callback">
             </form>
@@ -42,12 +42,14 @@
                 console.log(result)
                 send_response_to_form(result)
             },
-            onClose: function() {
+            onClose: function(result) {
                 /* You may add your own implementation here */
                 console.log(result)
                 alert('you closed the popup without finishing the payment');
             }
         })
+
+        document.querySelector('header').style.zIndex = 0
     });
 
     function send_response_to_form(result) {

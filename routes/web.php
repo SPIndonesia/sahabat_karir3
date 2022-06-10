@@ -18,7 +18,7 @@ use App\Http\Controllers\Admin\Pembayaran;
 
 // TODO: User
 use App\Http\Controllers\PembayaranController;
-
+use App\Models\Paket;
 
 // TODO: Default
 Route::get('/', [HomeController::class, 'index']);
@@ -73,6 +73,21 @@ Route::middleware(['auth', 'user'])->group(function () {
 
 
 // TODO: Pembayaran
+Route::get('/landingPaket/{id}', function ($id) {
+    $data = [
+        'judul'     => 'Landing Paket',
+
+        'css'       => [
+            'page/home/landingPage'
+        ],
+
+        'js'        => [],
+
+        'data_paket' => Paket::where('id_kategori', $id)->get()
+    ];
+    return view('landingPaket',  $data);
+})->name('landingPaket');
+
 Route::get('/pembayaran', [PembayaranController::class, 'index']);
 Route::get('/pembayaran/{id}', [PembayaranController::class, 'pay'])->name('pay');
 Route::post('/pembayaran/{id}', [PembayaranController::class, 'payPost'])->name('payPost');
