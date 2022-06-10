@@ -60,11 +60,14 @@ class PaketController extends Controller
      */
     public function store(Request $request)
     {
+        $imageName = time() . $request->file('image')->extension();
+        $request->file('image')->move(public_path('assets/img/paket'), $imageName);
         $data = Paket::create([
             'nama' => $request->nama,
             'harga' => $request->harga,
             'deskripsi' => $request->deskripsi,
             'id_kategori' => $request->id_kategori,
+            'image_url' => $imageName,
         ]);
 
         return redirect('admin/paket')->with('status', 'Paket berhasil dibuat!');
@@ -101,11 +104,14 @@ class PaketController extends Controller
      */
     public function update(Request $request, Paket $paket, $id)
     {
+        $imageName = time() . $request->file('image')->extension();
+        $request->file('image')->move(public_path('assets/img/paket'), $imageName);
         $data = Paket::find($id)->update([
             'nama' => $request->nama,
             'harga' => $request->harga,
             'deskripsi' => $request->deskripsi,
             'id_kategori' => $request->id_kategori,
+            'image_url' => $imageName,
         ]);
     }
     public function ubah(Request $request, Paket $paket, $id)
