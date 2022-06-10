@@ -31,10 +31,10 @@ Auth::routes();
 // TODO: Admin
 Route::middleware(['auth', 'admin'])->group(function () {
     // -- Beranda
-    Route::get('/admin/beranda', [BerandaController::class, 'index']);
+    Route::get('/admin/beranda', [BerandaController::class, 'index'])->name('admin');
 
     // -- User
-    Route::get('/admin/user', [UserController::class, 'index'])->name('admin');
+    Route::get('/admin/user', [UserController::class, 'index']);
     Route::delete('/admin/user/delete/$id', [UserController::class, 'destroy'])->name('user.delete');
 
     // -- Kategori

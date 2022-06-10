@@ -1,7 +1,7 @@
 @use '../../units/variables' as var
 
 .konten
-    margin-bottom: 100px !important
+    margin-bottom: 10rem !important
     margin: auto
     box-sizing: border-box
 
@@ -13,9 +13,10 @@
         color: var.$warna-biru
         margin-bottom: 10px
         font-weight: bolder
+        font-size: 3rem
 
-    p
-        font-size: 20px
+    h3
+        font-size: 1.6rem
         color: #494a4b
 
 // TODO: Jumbotron
@@ -53,9 +54,6 @@
         right: 10px
 
 // TODO: Gabung Bersama Kami
-.gabung-bersama-kami
-    margin: auto
-
 img.konten-logo
     height: 100px
     width: auto
@@ -88,7 +86,10 @@ img.konten-logo
 
 .konten__tentang-kami
     display: flex
-    position: relative
+    column-gap: 2rem
+
+    &>div
+        flex: 1
 
     h2
         text-align: center
@@ -96,39 +97,37 @@ img.konten-logo
         font-size: 24px
         color: var.$warna-biru
 
-    span
-        display: grid
-        grid--columns: 50px auto
-        height: 50px
-        justify-items: center
-        align-items: center
-        margin: 20px
-        gap: 20px
+.visi, .misi
+    &>div:not(:last-child)
+        margin-bottom: 2rem
 
-    span p:first-child
-        border: 1px solid #ccc
-        width: 50px
-        height: 50px
+    &>div
         display: flex
+        gap: 2rem
         align-items: center
-        justify-content: center
-        border-radius: 5px
 
-    .visi
-        flex: 1
+        p:first-child
+            width: 5rem
+            height: 5rem
+            border: 1px solid #999
+            border-radius: 5px
+            text-align: center
+            line-height: 5rem
 
-    .misi
-        flex: 1
+            font-size: 1.6rem
+
+        p:last-child
+            flex: 1
 
 // TODO: Kenapa Harus Kami
 .pembungkus-konten__kenapa-harus-kami
     display: grid
     justify-content: space-between
-    gap: 20px
+    gap: 2rem
 
 .kartu
     box-shadow: var.$shadow-default
-    padding: 10px
+    padding: 1rem
     box-sizing: border-box
     text-align: center
 
@@ -210,19 +209,13 @@ img.konten-logo
         width: inherit
 
     // TODO: Konten Tentang Kami
-    .konten__tentang-kami>div:first-child:after
-        content: ''
-        background-color: var.$warna-biru
-        width: 3px
-        position: absolute
-        top: 0
-        bottom: 0
-        left: 50%
-        transform: translateX(-50%)
+    .konten__tentang-kami>div:first-child
+        border-right: 3px solid var.$warna-biru
+        padding-right: 1rem
 
     // TODO: Kenapa Harus Kami
     .pembungkus-konten__kenapa-harus-kami
-        grid--columns: repeat(3, minmax(180px, 430px))
+        grid-template-columns: repeat(3, minmax(180px, 430px))
 
 // TODO: Tab
 @media screen and (min-width:768px) and (max-width:992px)
@@ -233,7 +226,7 @@ img.konten-logo
 
     // TODO: Kenapa Harus Kami
     .pembungkus-konten__kenapa-harus-kami
-        grid--columns: repeat(2, 1fr)
+        grid-template-columns: repeat(2, 1fr)
 
 // TODO: Tab dan Mobile
 @media screen and (max-width:992px)
@@ -272,13 +265,11 @@ img.konten-logo
 
         h2
             border-bottom: 3px solid var.$warna-biru
+            padding-bottom: 2rem
+            margin-bottom: 2rem
 
         &>div
             margin-bottom: 50px
-
-        span
-            font-size: 11px
-            margin: 20px 0
 
     // TODO: Kartu
     .kartu h2
@@ -286,4 +277,4 @@ img.konten-logo
 
     // TODO: Kenapa Harus Kami
     .pembungkus-konten__kenapa-harus-kami
-        grid--columns: 1fr
+        grid-template-columns: 1fr

@@ -1,3 +1,6 @@
+const el = el => document.querySelector(`${el}`)
+const elAll = el => document.querySelectorAll(`${el}`)
+
 // TODO: Navigasi
 const navHalLanding = [...document.querySelectorAll('#nav a')]
 
@@ -19,11 +22,9 @@ const tombol = document.querySelector('.tombol')
 
 document.addEventListener('click', e => {
     if (!e.target.contains(document.querySelector('.tombol'))) {
-        tombol.classList.add('tombol-tampil')
+        tombol.classList.toggle('tombol-tampil')
         return
     }
-
-    tombol.classList.remove('tombol-tampil')
 })
 
 
@@ -117,4 +118,16 @@ window.addEventListener('load', () => {
 
         e.innerHTML = `<p>${skorRating}</p>${bintang}`
     })
+})
+
+
+
+
+// TODO: Tombol
+// -- Logout
+tombol.addEventListener('click', e => {
+    if (e.target.classList.contains('logout')) {
+        e.preventDefault()
+        el('#logout-form').submit()
+    }
 })

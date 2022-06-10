@@ -62,16 +62,8 @@
                 @if (Auth::user())
 
                 @if (Auth::user()->role=='admin')
-
                 <a href="{{ route('admin') }}" class="admin">Admin</a>
-                <a href="" class="logout" onclick="event.preventDefault();
-                document.getElementById('logout-form').submit();">Logout</a>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                    @csrf
-                </form>
-                @else
-                <a href="" class="logout" onclick="event.preventDefault();
-                document.getElementById('logout-form').submit();">Logout</a>
+                <a href="" class="logout">Logout</a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                     @csrf
                 </form>
@@ -80,8 +72,6 @@
                 <a href="{{ route('login') }}">Login</a>
                 <a href="{{ route('register') }}">Register</a>
                 @endif
-
-
             </div>
 
             <div class="keranjang">
