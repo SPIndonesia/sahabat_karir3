@@ -14,17 +14,17 @@ class KategoriSeeder extends Seeder
      */
     public function run()
     {
-        Kategori::create([
-            [
-                'nama' => 'SBMPTN',
-                'deskripsi' => 'ini deskripsi',
-                'image_url' => 'foto.png',
-            ],
-            [
-                'nama' => 'Polri',
-                'deskripsi' => 'ini deskripsi',
-                'image_url' => 'foto.png',
-            ]
-        ]);
+        // Kategori::create([
+        //     [
+        //         'nama' => 'SBMPTN',
+        //         'deskripsi' => 'ini deskripsi',
+        //         'image_url' => 'foto.png',
+        //     ],
+        //     [
+        //         'nama' => 'Polri',
+        //         'deskripsi' => 'ini deskripsi',
+        //         'image_url' => 'foto.png',
+        //     ]
+        // ]);
     }
 }

@@ -14,22 +14,22 @@ class PaketSeeder extends Seeder
      */
     public function run()
     {
-        Paket::create([
-            [
-                'nama' => 'paket1',
-                'harga' => 1000000,
-                'deskripsi' => 'ini deskripsi',
-                'image_url' => 'foto.png',
-                'id_kategori' => 1,
-            ],
-            [
-                'nama' => 'paket2',
-                'harga' => 2000000,
-                'deskripsi' => 'ini deskripsi',
-                'image_url' => 'foto.png',
-                'id_kategori' => 1
-            ]
+        // Paket::create([
+        //     [
+        //         'nama' => 'paket1',
+        //         'harga' => 1000000,
+        //         'deskripsi' => 'ini deskripsi',
+        //         'image_url' => 'foto.png',
+        //         'id_kategori' => 1,
+        //     ],
+        //     [
+        //         'nama' => 'paket2',
+        //         'harga' => 2000000,
+        //         'deskripsi' => 'ini deskripsi',
+        //         'image_url' => 'foto.png',
+        //         'id_kategori' => 1
+        //     ]
 
-        ]);
+        // ]);
     }
 }
