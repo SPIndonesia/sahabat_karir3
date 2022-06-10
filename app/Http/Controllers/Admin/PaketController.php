@@ -32,9 +32,7 @@ class PaketController extends Controller
                 'paket'
             ],
 
-            'js' => [
-                'paket'
-            ],
+            'js' => [],
 
             'data_paket' => $data_paket,
 

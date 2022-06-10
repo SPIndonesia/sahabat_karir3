@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Paket;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -35,6 +36,23 @@ class UserController extends Controller
         ];
 
         return $this->adminPages('dataPeserta', $data);
+    }
+
+    public function paket($id)
+    {
+        $data = [
+            'judul'     => 'Landing Paket',
+
+            'css'       => [
+                'page/home/landingPage'
+            ],
+
+            'js'        => [],
+
+            'data_paket' => Paket::where('id_kategori', $id)->get()
+        ];
+
+        return $this->userPages('landingPaket', $data);
     }
 
     /**

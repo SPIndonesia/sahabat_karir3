@@ -150,6 +150,7 @@
     </div>
 
     <div class="pembungkus-konten__cerita-dari-sahabat">
+        <?php for ($i = 0; $i < 5; $i++) : ?>
         <div class="konten__cerita-dari-sahabat">
             <div class="profil-pengguna mb">
                 <img src="assets/img/alumni/alumni1.png" alt="profil user">
@@ -167,78 +168,7 @@
                 </p>
             </div>
         </div>
-
-        <div class="konten__cerita-dari-sahabat">
-            <div class="profil-pengguna mb">
-                <img src="assets/img/alumni/alumni1.png" alt="profil user">
-            </div>
-
-            <div class="info-pengguna mb">
-                <h2 class="mb">Febridilla Nurul Masyita</h2>
-                <h2 class="mb">Lulus SBMPTN</h2>
-                <div class="rating" data-skorRating="3.5"></div>
-            </div>
-
-            <div class="tanggapan-mereka mb">
-                <p>
-                    “Materi yang diberikan sangat mudah dipahami sehingga memudahkan aku dalam belajar”
-                </p>
-            </div>
-        </div>
-
-        <div class="konten__cerita-dari-sahabat">
-            <div class="profil-pengguna mb">
-                <img src="assets/img/alumni/alumni1.png" alt="profil user">
-            </div>
-
-            <div class="info-pengguna mb">
-                <h2 class="mb">Febridilla Nurul Masyita</h2>
-                <h2 class="mb">Lulus SBMPTN</h2>
-                <div class="rating" data-skorRating="3.9"></div>
-            </div>
-
-            <div class="tanggapan-mereka mb">
-                <p>
-                    “Materi yang diberikan sangat mudah dipahami sehingga memudahkan aku dalam belajar”
-                </p>
-            </div>
-        </div>
-
-        <div class="konten__cerita-dari-sahabat">
-            <div class="profil-pengguna mb">
-                <img src="assets/img/alumni/alumni1.png" alt="profil user">
-            </div>
-
-            <div class="info-pengguna mb">
-                <h2 class="mb">Febridilla Nurul Masyita</h2>
-                <h2 class="mb">Lulus SBMPTN</h2>
-                <div class="rating" data-skorRating="4.5"></div>
-            </div>
-
-            <div class="tanggapan-mereka mb">
-                <p>
-                    “Materi yang diberikan sangat mudah dipahami sehingga memudahkan aku dalam belajar”
-                </p>
-            </div>
-        </div>
-
-        <div class="konten__cerita-dari-sahabat">
-            <div class="profil-pengguna mb">
-                <img src="assets/img/alumni/alumni1.png" alt="profil user">
-            </div>
-
-            <div class="info-pengguna mb">
-                <h2 class="mb">Febridilla Nurul Masyita</h2>
-                <h2 class="mb">Lulus SBMPTN</h2>
-                <div class="rating" data-skorRating="1"></div>
-            </div>
-
-            <div class="tanggapan-mereka mb">
-                <p>
-                    “Materi yang diberikan sangat mudah dipahami sehingga memudahkan aku dalam belajar”
-                </p>
-            </div>
-        </div>
+        <?php endfor ?>
     </div>
 </div>
 

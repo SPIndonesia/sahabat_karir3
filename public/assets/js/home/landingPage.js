@@ -1,22 +1,6 @@
 const el = el => document.querySelector(`${el}`)
 const elAll = el => document.querySelectorAll(`${el}`)
 
-// TODO: Navigasi
-const navHalLanding = [...document.querySelectorAll('#nav a')]
-
-navHalLanding.map(e => {
-    e.addEventListener('click', e => {
-        e.preventDefault()
-
-        const hrefTarget = e.target.getAttribute('href')
-
-        let target = document.getElementById(hrefTarget).offsetTop
-        target -= 100
-
-        window.scrollTo(0, target)
-    })
-})
-
 // -- Mobile
 const tombol = document.querySelector('.tombol')
 

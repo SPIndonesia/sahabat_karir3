@@ -91,7 +91,7 @@
 
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
-    <script src="{{ asset('assets/js/admin/template.js') }}"></script>
+    <script src="{{ asset('assets/js/templates/template.js') }}"></script>
 
     {{---------------------------- My script ----------------------------}}
     @foreach ($js as $sc)

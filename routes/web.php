@@ -67,26 +67,12 @@ Route::middleware(['auth', 'user'])->group(function () {
     Route::get('coba/admin2', function () {
         return 'admin';
     });
+
+    // -- Pembayaran
+    Route::get('/paket/{id}', [UserController::class, 'paket'])->name('landingPaket');
 });
 
 
-
-
-// TODO: Pembayaran
-Route::get('/landingPaket/{id}', function ($id) {
-    $data = [
-        'judul'     => 'Landing Paket',
-
-        'css'       => [
-            'page/home/landingPage'
-        ],
-
-        'js'        => [],
-
-        'data_paket' => Paket::where('id_kategori', $id)->get()
-    ];
-    return view('landingPaket',  $data);
-})->name('landingPaket');
 
 Route::get('/pembayaran', [PembayaranController::class, 'index']);
 Route::get('/pembayaran/{id}', [PembayaranController::class, 'pay'])->name('pay');

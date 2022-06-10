@@ -167,6 +167,7 @@
     <script src="{{asset('assets/js/slick.min.js')}}"></script>
 
     {{--------------------------- My js ---------------------------}}
+    <script src="{{asset('assets/js/templates/home.js')}}"></script>
     @if ($js)
     @foreach ($js as $sc)
     <script src="{{ asset('assets/js/' . $sc . '.js') }}"></script>
