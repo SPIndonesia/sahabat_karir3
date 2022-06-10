@@ -53,8 +53,7 @@
     <div class="pembungkus-konten__gabung-bersama-kami">
         @foreach ($kategories as $kategori)
         <div class="konten__gabung-bersama-kami">
-            <img class="konten-logo" src="{{ asset('assets/img/kategori/' . $kategori->gambar_paket) }}"
-                alt="kelas cpns">
+            <img class="konten-logo" src="{{ asset('assets/img/kategori/' . $kategori->image_url) }}" alt="kelas cpns">
             <h1>{{ $kategori->nama }}</h1>
             <div class="lihat-kelas">
                 <p>{{ $kategori->deskripsi }}</p>

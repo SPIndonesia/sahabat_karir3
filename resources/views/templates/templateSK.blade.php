@@ -75,12 +75,6 @@
                 <a href="{{ route('register') }}">Register</a>
                 @endif
             </div>
-
-            <div class="keranjang">
-                <a href="">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                </a>
-            </div>
         </div>
     </header>
 

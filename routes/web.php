@@ -72,8 +72,6 @@ Route::middleware(['auth', 'user'])->group(function () {
     Route::get('/paket/{id}', [UserController::class, 'paket'])->name('landingPaket');
 });
 
-
-
 Route::get('/pembayaran', [PembayaranController::class, 'index']);
 Route::get('/pembayaran/{id}', [PembayaranController::class, 'pay'])->name('pay');
 Route::post('/pembayaran/{id}', [PembayaranController::class, 'payPost'])->name('payPost');
