@@ -61,13 +61,15 @@
             <div class="tombol">
                 @if (Auth::user())
 
-                @if (Auth::user()->role=='admin')
+                @if (Auth::user()->role==='admin')
                 <a href="{{ route('admin') }}" class="admin">Admin</a>
+                @endif
+
                 <a href="" class="logout">Logout</a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                     @csrf
                 </form>
-                @endif
+
                 @else
                 <a href="{{ route('login') }}">Login</a>
                 <a href="{{ route('register') }}">Register</a>
