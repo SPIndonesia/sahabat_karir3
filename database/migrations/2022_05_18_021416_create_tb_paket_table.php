@@ -18,6 +18,7 @@ class CreateTbPaketTable extends Migration
             $table->string('nama');
             $table->integer('harga');
             $table->longText('deskripsi')->nullable();
+            $table->string('image_url');
             $table->foreignId('id_kategori')->nullable();
             $table->timestamps();
         });
