@@ -32,7 +32,6 @@ class KategoriController extends Controller
             'data_kategori' => $data_kategori,
         ];
 
-
         return $this->adminPages('kategori', $data);
     }
 
@@ -54,12 +53,13 @@ class KategoriController extends Controller
      */
     public function store(Request $request)
     {
-
         $imageName = time() . $request->file('gambar_kategori')->extension();
-        $request->file('file')->move(public_path('assets/img/kategori'), $imageName);
+        $request->file('gambar_kategori')->move(public_path('assets/img/kategori'), $imageName);
+
         $data = Kategori::create(
             [
                 'nama' => $request->nama,
+                'deskripsi' => $request->deskripsi,
                 'image_url' => $imageName,
             ]
         );

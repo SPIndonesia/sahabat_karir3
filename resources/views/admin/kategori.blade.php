@@ -105,7 +105,7 @@
 
                     <li class="upload-gambar">
                         <p>Masukkan Gambar Kategori</p>
-                        <input class="" type="file" name="gambar_kategori" hidden>
+                        <input class="" accept=".png,.jpg" type="file" name="gambar_kategori" hidden>
                     </li>
 
                     <li class="tombol-simpan">
