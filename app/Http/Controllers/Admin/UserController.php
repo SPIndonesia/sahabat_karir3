@@ -25,11 +25,12 @@ class UserController extends Controller
             'judul' => 'Sahabat Karir | User',
 
             'css' => [
-                'dataPeserta'
+                'pages/admin/dataPeserta',
+                'components/tabelAdmin'
             ],
 
             'js' => [
-                'dataPeserta'
+                'admin/dataPeserta'
             ],
 
             'data_user' => User::all(),

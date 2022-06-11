@@ -5,7 +5,7 @@
 <div class="sec-one">
     <div class="pencarian">
         <form action="">
-            <input type="text" placeholder="Cari Testimoni atau Alumni">
+            <input type="text" placeholder="Cari Jumbotron Gambar">
             <i class="fa-solid fa-magnifying-glass"></i>
             <button type="submit" hidden></button>
         </form>
@@ -18,7 +18,7 @@
 
 <div class="sec-two">
     <div class="judul">
-        <h1>Tabel Testimoni</h1>
+        <h1>Jumbotron</h1>
         <a href="" class="tombol-tambah">Tambah Data</a>
     </div>
 
@@ -27,26 +27,20 @@
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>Foto Alumni</th>
-                    <th>Lulusan</th>
-                    <th>Rating</th>
-                    <th>Deskripsi</th>
+                    <th>Gambar</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
 
             <tbody>
-                <?php for ($i = 1; $i <= 5; $i++) : ?>
+                <?php for ($i = 1; $i < 3; $i++) : ?>
                 <tr data-id="">
                     <td>
                         <?= $i ?>
                     </td>
                     <td>
-                        <img src="{{ asset('assets/img/alumni/alumni1.png') }}" alt="Gambar Testimoni">
+                        <img src="{{ asset('assets/img/landingPage/1.jpg') }}" alt="Gambar Jumbotron">
                     </td>
-                    <td>Lulusan SBMPTN</td>
-                    <td>Ada Adha</td>
-                    <td>3.5</td>
                     <td>
                         <div class="aksi">
                             <div class="ubah" data-kategori="">
@@ -96,26 +90,13 @@
                 @method('PUT')
                 @csrf
                 <ul class="form">
+                    <li class="gambar">
+                        <img src="" alt="Gambar Jumbotron">
+                    </li>
+
                     <li class="upload-gambar">
-                        <p>Foto User</p>
-                        <input class="" accept=".png,.jpg" type="file" name="" hidden>
-                    </li>
-
-                    <li>
-                        <label for="nama">Lulusan : </label>
-                        <input class="kategori-nama" type="text" placeholder="Masukkan Nama Kategori" name="nama"
-                            autocomplete="off">
-                    </li>
-
-                    <li>
-                        <label for="deskripsi">Rating : </label>
-                        <input class="" type="text" placeholder="Masukkan Nama Kategori" name="deskripsi"
-                            autocomplete="off">
-                    </li>
-
-                    <li>
-                        <label for="deskripsi">Deskripsi : </label>
-                        <textarea name="" id="" autocomplete="off"></textarea>
+                        <p>Masukkan Gambar Kategori</p>
+                        <input class="" accept=".png,.jpg" type="file" name="gambar_kategori" hidden>
                     </li>
 
                     <li class="tombol-simpan">

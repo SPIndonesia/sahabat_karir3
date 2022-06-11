@@ -5,24 +5,24 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class TestimoniController extends Controller
+class JumbotronController extends Controller
 {
     public function index()
     {
         $data = [
-            'judul'         => 'Sahabat Karir | Testimoni',
+            'judul'         => 'Sahabat Karir | Jumbotron',
 
             'css'           => [
                 'components/tabelAdmin',
                 'components/popup',
-                'pages/admin/testimoni'
+                'pages/admin/jumbotron'
             ],
 
             'js'            => [
-                'admin/testimoni'
+                'admin/jumbotron'
             ]
         ];
 
-        return $this->adminPages('testimoni', $data);
+        return $this->adminPages('jumbotron', $data);
     }
 }

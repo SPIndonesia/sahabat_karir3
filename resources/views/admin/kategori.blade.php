@@ -1,15 +1,13 @@
 @extends('templates.templateadminSK')
 
 @section('content')
-@if (session('status'))
-<div class="alert alert-success" data-alert="{{ session('status') }}"></div>
-@endif
 
 <div class="sec-one">
     <div class="pencarian">
         <form action="">
             <input type="text" placeholder="Cari Kategori">
             <i class="fa-solid fa-magnifying-glass"></i>
+            <button type="submit" hidden></button>
         </form>
     </div>
 
@@ -18,7 +16,7 @@
     </div>
 </div>
 
-<div class="sec-two kartu">
+<div class="sec-two">
     <div class="judul">
         <h1>Tabel Kategori</h1>
         <a href="" class="tombol-tambah">Tambah Data</a>
@@ -30,6 +28,8 @@
                 <tr>
                     <th>No</th>
                     <th>Nama Kategori</th>
+                    <th>Deskripsi Kategori</th>
+                    <th>Gambar Kategori</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
@@ -37,32 +37,31 @@
             <tbody>
                 @foreach ($data_kategori as $d)
                 <tr data-id="{{ $d->id_kategori}}">
-                    <td>
-                        {{ $loop->iteration }}
-                    </td>
-
+                    <td>{{ $loop->iteration }}</td>
                     <td>{{ $d->nama }}</td>
+                    <td>{{ $d->deskripsi }}</td>
+                    <td class="gambar-kategori">
+                        <img src="{{ asset('assets/img/kategori/' . $d->image_url) }}" alt="Gambar Kategori">
+                    </td>
+                    <td>
+                        <div class="aksi">
+                            <div class="ubah" data-kategori="{{ $d }}">
+                                <i class="ubah fa-solid fa-pen"></i>
+                            </div>
 
+                            <div class="hapus">
+                                <form action="{{ route('kategori.hapus',$d->id_kategori) }}" method="POST">
+                                    @method('DELETE')
+                                    @csrf
+                                    <i class="hapus fa-solid fa-trash"></i>
 
-                    <td class="aksi">
-                        <div class="ubah" data-kategori="{{ $d }}">
-                            <i class="ubah fa-solid fa-pen"></i>
-                        </div>
-
-                        <div class="hapus">
-                            <form action="{{ route('kategori.hapus',$d->id_kategori) }}" method="post">
-                                @method('DELETE')
-                                @csrf
-                                <i class="hapus fa-solid fa-trash"></i>
-
-                                <button type="submit" hidden></button>
-
-                            </form>
+                                    <button type="submit" name="hapus" hidden></button>
+                                </form>
+                            </div>
                         </div>
                     </td>
                 </tr>
                 @endforeach
-
             </tbody>
         </table>
 
@@ -89,18 +88,20 @@
                 <h1>Tambah Data</h1>
             </div>
 
-            <form class="kategori_form" action="" method="POST" enctype="multipart/form-data">
+            <form action="" method="POST" enctype="multipart/form-data">
                 @method('PUT')
                 @csrf
                 <ul class="form">
                     <li>
                         <label for="nama">Nama Kategori : </label>
-                        <input class="kategori-nama" type="text" placeholder="Masukkan Nama Kategori" name="nama">
+                        <input class="kategori-nama" type="text" placeholder="Masukkan Nama Kategori" name="nama"
+                            autocomplete="off">
                     </li>
 
                     <li>
                         <label for="deskripsi">Deskripsi Kategori : </label>
-                        <input class="" type="text" placeholder="Masukkan Nama Kategori" name="deskripsi">
+                        <input class="" type="text" placeholder="Masukkan Nama Kategori" name="deskripsi"
+                            autocomplete="off">
                     </li>
 
                     <li class="upload-gambar">

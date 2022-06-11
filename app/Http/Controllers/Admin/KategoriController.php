@@ -22,11 +22,13 @@ class KategoriController extends Controller
             'judul' => 'Sahabat Karir | Kategori',
 
             'css' => [
-                'kategori'
+                'components/tabelAdmin',
+                'components/popup',
+                'pages/admin/kategori'
             ],
 
             'js' => [
-                'kategori'
+                'admin/kategori'
             ],
 
             'data_kategori' => $data_kategori,
@@ -54,7 +56,7 @@ class KategoriController extends Controller
     public function store(Request $request)
     {
         $imageName = time() . '.' . $request->file('gambar_kategori')->extension();
-        $request->file('file')->move(public_path('assets/img/kategori'), $imageName);
+        $request->file('gambar_kategori')->move(public_path('assets/img/kategori'), $imageName);
         $data = Kategori::create(
             [
                 'nama' => $request->nama,

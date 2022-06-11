@@ -13,11 +13,14 @@ class BerandaController extends Controller
             'judul'     => 'Beranda Admin',
 
             'css'       => [
-                'beranda'
+                'pages/admin/beranda'
             ],
 
             'js'        => [
-                'beranda'
+
+                // -- Google Chart
+                'admin/loader',
+                'admin/chart'
             ]
         ];
 

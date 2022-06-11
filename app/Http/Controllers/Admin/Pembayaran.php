@@ -12,9 +12,13 @@ class Pembayaran extends Controller
         $data = [
             'judul'         => 'Sahabat Karir | Pembayaran',
 
-            'css'           => [],
+            'css'           => [
+                'components/tabelAdmin'
+            ],
 
-            'js'            => []
+            'js'            => [
+                'admin/pembayaran'
+            ]
         ];
 
         return $this->adminPages('pembayaran', $data);

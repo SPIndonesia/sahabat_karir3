@@ -1,11 +1,10 @@
 @extends('templates.templateadminSK')
 
 @section('content')
-
 <div class="sec-one">
     <div class="pencarian">
         <form action="">
-            <input type="text" placeholder="Cari Testimoni atau Alumni">
+            <input type="text" placeholder="Cari Visi | Misi">
             <i class="fa-solid fa-magnifying-glass"></i>
             <button type="submit" hidden></button>
         </form>
@@ -18,7 +17,7 @@
 
 <div class="sec-two">
     <div class="judul">
-        <h1>Tabel Testimoni</h1>
+        <h1>Tentang Kami</h1>
         <a href="" class="tombol-tambah">Tambah Data</a>
     </div>
 
@@ -27,29 +26,49 @@
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>Foto Alumni</th>
-                    <th>Lulusan</th>
-                    <th>Rating</th>
-                    <th>Deskripsi</th>
+                    <th>Tipe</th>
+                    <th>Text</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
 
             <tbody>
-                <?php for ($i = 1; $i <= 5; $i++) : ?>
+                <?php for ($i = 1; $i < 3; $i++) : ?>
                 <tr data-id="">
                     <td>
                         <?= $i ?>
                     </td>
-                    <td>
-                        <img src="{{ asset('assets/img/alumni/alumni1.png') }}" alt="Gambar Testimoni">
-                    </td>
-                    <td>Lulusan SBMPTN</td>
-                    <td>Ada Adha</td>
-                    <td>3.5</td>
+                    <td>Visi</td>
+                    <td>Menjadi mitra yang dinamis bagi klien dalam konsultansi & pengembangan SDM secara
+                        professional.</td>
                     <td>
                         <div class="aksi">
                             <div class="ubah" data-kategori="">
+                                <i class="ubah fa-solid fa-pen"></i>
+                            </div>
+
+                            <div class="hapus">
+                                <form action="" method="POST">
+                                    @method('DELETE')
+                                    @csrf
+                                    <i class="hapus fa-solid fa-trash"></i>
+
+                                    <button type="submit" name="hapus" hidden></button>
+                                </form>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr data-id="">
+                    <td>
+                        <?= $i ?>
+                    </td>
+                    <td>Misi</td>
+                    <td>Menjadi mitra yang dinamis bagi klien dalam konsultansi & pengembangan SDM secara
+                        professional.</td>
+                    <td>
+                        <div class="aksi">
+                            <div class="ubah">
                                 <i class="ubah fa-solid fa-pen"></i>
                             </div>
 
@@ -96,26 +115,18 @@
                 @method('PUT')
                 @csrf
                 <ul class="form">
-                    <li class="upload-gambar">
-                        <p>Foto User</p>
-                        <input class="" accept=".png,.jpg" type="file" name="" hidden>
+                    <li>
+                        <label for="jenis">Pilih Jenis : </label>
+
+                        <select name="jenis" id="jenis">
+                            <option value="Visi">Visi</option>
+                            <option value="Misi">Misi</option>
+                        </select>
                     </li>
 
                     <li>
-                        <label for="nama">Lulusan : </label>
-                        <input class="kategori-nama" type="text" placeholder="Masukkan Nama Kategori" name="nama"
-                            autocomplete="off">
-                    </li>
-
-                    <li>
-                        <label for="deskripsi">Rating : </label>
-                        <input class="" type="text" placeholder="Masukkan Nama Kategori" name="deskripsi"
-                            autocomplete="off">
-                    </li>
-
-                    <li>
-                        <label for="deskripsi">Deskripsi : </label>
-                        <textarea name="" id="" autocomplete="off"></textarea>
+                        <label for="deskripsi">Text : </label>
+                        <textarea name=""></textarea>
                     </li>
 
                     <li class="tombol-simpan">
@@ -126,5 +137,4 @@
         </div>
     </div>
 </div>
-
 @endsection

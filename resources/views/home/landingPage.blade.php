@@ -69,8 +69,6 @@
     </div>
 </div>
 
-
-
 <!-- --------------- Tentang Kami --------------- -->
 <div class="konten tentang-kami" id="tentang-kami">
     <div class="pembungkus-judul">

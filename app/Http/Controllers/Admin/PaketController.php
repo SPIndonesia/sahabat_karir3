@@ -22,21 +22,22 @@ class PaketController extends Controller
 
     public function index()
     {
-        $data_paket = Paket::all();
-        $data_kategori = Kategori::all();
-
         $data = [
             'judul' => 'Sahabat Karir | Paket',
 
             'css' => [
-                'paket'
+                'components/tabelAdmin',
+                'components/popup',
+                'pages/admin/paket'
             ],
 
-            'js' => [],
+            'js' => [
+                'admin/paket'
+            ],
 
-            'data_paket' => $data_paket,
+            'data_paket' => Paket::all(),
 
-            'data_kategori' => $data_kategori,
+            'data_kategori' => Kategori::all()
         ];
 
         return $this->adminPages('paket', $data);

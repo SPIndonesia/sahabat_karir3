@@ -77,11 +77,14 @@ header
             background-color: var.$biru-3
 
             svg
-                color: #000
+                color: #fff
 
     .aktif
         color: #fff
         background-color: var.$biru-3
+
+        svg
+            color: inherit
 
     svg
         color: #333
@@ -118,3 +121,16 @@ header
     padding: 20px
     padding-bottom: calc( var.$tinggi-header + 2rem )
     box-sizing: border-box
+
+@media print
+    header, nav, .sec-one, .next-prev
+        display: none !important
+
+    .content
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+
+        font-size: 1.2rem

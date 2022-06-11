@@ -1,71 +1,53 @@
 @use '../../units/variables' as var
 
-.sec-one
+.content>section:not(:last-child)
+    margin-bottom: 5rem
+
+._kartu
     display: flex
-    gap: 10px
-    width: 100%
-    margin-bottom: 30px
+    column-gap: 2rem
 
-    .kartu
-        width: 25%
-        padding: 10px 20px
+    &>div
+        min-width: 30rem
+        height: 15rem
+        padding: 2rem
         box-sizing: border-box
-        display: flex
-        justify-content: space-between
+        border-radius: 1rem
+        background-color: #fff
+        box-shadow: var.$shadow-default
 
-    .info
-        .icon
-            height: 100px
+        position: relative
 
-            img
-                height: 70px
+    .persentase
+        position: absolute
+        bottom: 1rem
+        right: 1rem
+        background-color: var.$bright-green
+        padding: 5px 10px
+        border-radius: 3px
 
-        h1
-            font-size: 2rem
-            color: var.$warna-biru
+        color: #fff
+
+        &:hover
+            cursor: default
+
+    .icon
+        margin-bottom: 1rem
+
+        img
+            height: 8rem
+
+    .text
+        a
+            transition: color 300ms
+
+            &:hover
+                color: var.$warna-biru
 
         p
             font-size: 1.2rem
+            color: #777
 
-// TODO: Sec One
-.sec-two
-    padding: 20px
-
-    .judul h1
-        font-size: 2rem
-        font-weight: bold
-        color: var.$warna-biru
-
-    .konten
-        display: flex
-        column-gap: 40px
-
-    // TODO: Bagan
-    #bagan
-        width: 80%
-        height: 500px
-
-    // TODO: List Kategori
-    .list-kategori
-        form
-            margin-bottom: 50px
-
-        select
-            border: none
-            border-bottom: 1px solid #999
-            padding: .5em 1em
-
-            &:focus
-                outline: none
-
-        ul li
-            position: relative
-            margin-bottom: 10px
-
-            &::after
-                content: ''
-                position: absolute
-                right: calc( 100% + 10px )
-                width: 15px
-                height: 100%
-                background-color: var(--warna-kotak)
+// TODO: Sec Two
+#bagan
+    height: 500px

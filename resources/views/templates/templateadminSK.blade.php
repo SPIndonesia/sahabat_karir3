@@ -15,7 +15,7 @@
 
     @if ($css)
     @foreach ($css as $s)
-    <link rel="stylesheet" href="{{ asset('assets/css/pages/admin/'.$s.'.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/'.$s.'.css') }}">
     @endforeach
     @endif
 </head>
@@ -39,6 +39,10 @@
             </div>
         </div>
     </header>
+
+    @if (session('status'))
+    <div class="alert alert-success" data-alert="{{ session('status') }}"></div>
+    @endif
 
     <nav class="navigasi-admin">
         <div class="logo">
@@ -66,13 +70,23 @@
             <h2>Paket</h2>
         </a>
 
-        <a href="/admin/kelas">
-            <i class="fa-solid fa-chalkboard-user"></i>
-            <h2>Kelas</h2>
+        <a href="/admin/jumbotron">
+            <i class="fa-solid fa-photo-film"></i>
+            <h2>Jumbotron</h2>
+        </a>
+
+        <a href="/admin/keunggulan">
+            <i class="fa-solid fa-rectangle-ad"></i>
+            <h2>Keunggulan Kami</h2>
+        </a>
+
+        <a href="/admin/about">
+            <i class="fa-solid fa-star"></i>
+            <h2>Tentang Kami</h2>
         </a>
 
         <a href="/admin/testimoni">
-            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-comment"></i>
             <h2>Testimoni</h2>
         </a>
 
@@ -89,13 +103,12 @@
     <script src="{{ asset('assets/js/sweetalert2.all.min.js') }}"> </script>
     <script src="https://kit.fontawesome.com/02db274a60.js" crossorigin="anonymous"></script>
 
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-
+    <script src="{{ asset('assets/js/templates/adminFunc.js') }}"></script>
     <script src="{{ asset('assets/js/templates/template.js') }}"></script>
 
     {{---------------------------- My script ----------------------------}}
     @foreach ($js as $sc)
-    <script src="{{ asset('assets/js/admin/'. $sc.'.js') }}"></script>
+    <script src="{{ asset('assets/js/'. $sc.'.js') }}"></script>
     @endforeach
 </body>
 

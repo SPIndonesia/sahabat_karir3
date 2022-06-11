@@ -5,24 +5,23 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class TestimoniController extends Controller
+class AboutController extends Controller
 {
     public function index()
     {
         $data = [
-            'judul'         => 'Sahabat Karir | Testimoni',
+            'judul'         => 'Sahabat Karir | Tentang Website',
 
             'css'           => [
                 'components/tabelAdmin',
-                'components/popup',
-                'pages/admin/testimoni'
+                'components/popup'
             ],
 
             'js'            => [
-                'admin/testimoni'
+                'admin/about'
             ]
         ];
 
-        return $this->adminPages('testimoni', $data);
+        return $this->adminPages('about', $data);
     }
 }

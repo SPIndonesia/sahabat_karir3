@@ -1,15 +1,12 @@
 @extends('templates.templateadminSK')
 
 @section('content')
-@if (session('status'))
-<div class="alert alert-success" data-alert="{{ session('status') }}"></div>
-@endif
-
 <div class="sec-one">
     <div class="pencarian">
         <form action="">
-            <input type="text" placeholder="Cari Paket">
+            <input type="text" placeholder="Cari Paket Kelas">
             <i class="fa-solid fa-magnifying-glass"></i>
+            <button type="submit" hidden></button>
         </form>
     </div>
 
@@ -18,10 +15,9 @@
     </div>
 </div>
 
-<div class="sec-two kartu">
+<div class="sec-two">
     <div class="judul">
         <h1>Tabel paket</h1>
-
         <a href="" class="tombol-tambah">Tambah Data</a>
     </div>
 
@@ -41,27 +37,20 @@
             <tbody>
                 @foreach ($data_paket as $d)
                 <tr data-id="{{ $d->id_paket}}">
-                    <td>
-                        {{ $loop->iteration }}
-                    </td>
-
+                    <td>{{ $loop->iteration }}</td>
                     <td>{{ $d->nama }}</td>
                     <td>{{ $d->harga }}</td>
                     <td>{{ $d->deskripsi }}</td>
                     <td>{{ $d->kategori->nama }}</td>
 
-
                     <td class="aksi">
-                        <div class="ubah" data-paket="{{ $d }}">
-                            <i class="fa-solid fa-pen"></i>
-                        </div>
+                        <div class="ubah"><i class="ubah fa-solid fa-pen"></i></div>
 
                         <div class="hapus">
                             <form action="{{ route('paket.hapus',$d->id_paket) }}" method="post">
                                 @method('DELETE')
                                 @csrf
                                 <i class="hapus fa-solid fa-trash"></i>
-
                             </form>
                         </div>
                     </td>
@@ -93,7 +82,7 @@
                 <h1>Tambah Data</h1>
             </div>
 
-            <form class="paket_form" action="" method="POST">
+            <form action="" method="POST" enctype="multipart/form-data">
                 @method('PUT')
                 @csrf
                 <ul class="form">
@@ -115,16 +104,15 @@
                             placeholder="Masukkan Deskripsi paket" autocomplete="off">
                     </li>
 
-                    <label for="mobile-id-icon">Kategori</label>
-                    <div class="form-group">
+                    <li>
+                        <label for="id_kategori">Kategori</label>
                         <select class="choices form-select" name="id_kategori">
-                            <!-- <option class="paket-id_kategori"></option> -->
                             @foreach($data_kategori as $key => $item)
                             <option class="paket-id_kategori" value="{{$item->id_kategori}}">{{$item->nama}}
                             </option>
                             @endforeach
                         </select>
-                    </div>
+                    </li>
 
                     <li class="tombol-simpan">
                         <button type="submit">Simpan</button>
