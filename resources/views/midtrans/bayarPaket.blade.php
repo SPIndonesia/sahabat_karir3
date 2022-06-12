@@ -67,7 +67,7 @@
         </div>
 
         <div>
-            <button id="pay-button">Beli</button>
+            <button id="pay-button">Bayar</button>
         </div>
 
         <form action="{{route('payPost', $data_paket->id_paket)}}" id="submit_form" method="post">
