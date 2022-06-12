@@ -18,11 +18,24 @@ navHalLanding.map(e => {
 
 // TODO: Tombol
 // -- Logout
-const tombol = document.querySelector('.tombol')
+const tombol = el('.tombol')
 
 tombol.addEventListener('click', e => {
     if (e.target.classList.contains('logout')) {
         e.preventDefault()
         el('#logout-form').submit()
     }
+})
+
+// -- Mobile
+document.addEventListener('click', function (e) {
+    if (el('.aksi').contains(e.target)) {
+        tombol.classList.toggle('tombol-tampil')
+        return
+    }
+    tombol.classList.toggle('tombol-tampil')
+})
+
+document.addEventListener('scroll', () => {
+    tombol.classList.remove('tombol-tampil')
 })

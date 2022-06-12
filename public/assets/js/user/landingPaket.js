@@ -1,0 +1,16 @@
+const animasiTinggi = function (el) {
+    el.querySelector('div').classList.toggle('height')
+    el.querySelector('.deskripsi').classList.toggle('opacity')
+    return
+}
+
+const card = [...elAll('.card')]
+
+card.map(e => {
+    e.addEventListener('mouseenter', function () {
+        animasiTinggi(this)
+    })
+    e.addEventListener('mouseleave', function () {
+        animasiTinggi(this)
+    })
+})

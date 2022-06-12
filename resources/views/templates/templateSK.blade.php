@@ -36,9 +36,9 @@
 <body>
     <header>
         <div class="header-left">
-            <div class="logo">
+            <a href="/" class="logo">
                 <img src="{{asset('assets/img/icon/logo-sk.png')}}" alt="sahabat karir">
-            </div>
+            </a>
 
             <nav class="nav-header" id="nav">
                 <a href="kelas">Kelas</a>

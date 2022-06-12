@@ -45,10 +45,12 @@ class UserController extends Controller
             'judul'     => 'Landing Paket',
 
             'css'       => [
-                'page/home/landingPage'
+                'pages/user/landingPaket'
             ],
 
-            'js'        => [],
+            'js'        => [
+                'user/landingPaket'
+            ],
 
             'data_paket' => Paket::where('id_kategori', $id)->get()
         ];

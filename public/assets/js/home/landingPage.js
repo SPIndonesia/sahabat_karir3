@@ -1,11 +1,3 @@
-document.addEventListener('click', e => {
-    if (!e.target.contains(document.querySelector('.tombol'))) {
-        tombol.classList.toggle('tombol-tampil')
-        return
-    }
-})
-
-
 // TODO: Slick
 const slickDefault = function (kelas) {
     $(`.${kelas}`).slick({
