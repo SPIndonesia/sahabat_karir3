@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kategori;
 use App\Models\Pembayaran;
 use App\Models\Paket;
 use App\Models\Orders;
@@ -57,9 +58,15 @@ class PembayaranController extends Controller
 
             'css'       => [],
 
-            'js'        => [],
+            'js'        => [
+                'midtrans/bayarPaket'
+            ],
+
             'snap_token' => $snapToken,
-            'data_paket' => $data_paket
+
+            'data_paket' => $data_paket,
+
+            'dataKategori' => Kategori::where('id_kategori', $data_paket->id_kategori)->first()
         ];
 
         return view('midtrans/bayarPaket', $data);
@@ -98,20 +105,6 @@ class PembayaranController extends Controller
         } else {
             return redirect(url('/'))->with('alert-failed', 'terjadi kesalahan');
         }
-    }
-
-    public function index()
-    {
-        $data_pembayaran = Pembayaran::all();
-
-        $data = [
-            'judul' => 'judul',
-            'css' => 'pembayaran',
-            'js' => 'pembayaran',
-            'data_pembayaran' => $data_pembayaran,
-        ];
-
-        return view('user/payment', $data);
     }
 
     /**

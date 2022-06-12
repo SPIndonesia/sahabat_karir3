@@ -159,6 +159,7 @@
     </footer>
     <script src="{{asset('assets/js/jquery-3.6.0.min.js')}}"></script>
     <script src="{{asset('assets/js/slick.min.js')}}"></script>
+    <script src="{{ asset('assets/js/sweetalert2.all.min.js') }}"> </script>
 
     {{--------------------------- My js ---------------------------}}
     <script src="{{asset('assets/js/templates/home.js')}}"></script>
