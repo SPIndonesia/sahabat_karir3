@@ -163,6 +163,8 @@
 
     {{--------------------------- My js ---------------------------}}
     <script src="{{asset('assets/js/templates/home.js')}}"></script>
+    <script src="{{asset('assets/js/templates/allFunc.js')}}"></script>
+
     @if ($js)
     @foreach ($js as $sc)
     <script src="{{ asset('assets/js/' . $sc . '.js') }}"></script>

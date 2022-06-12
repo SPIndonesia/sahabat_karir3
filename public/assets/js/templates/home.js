@@ -33,7 +33,7 @@ document.addEventListener('click', function (e) {
         tombol.classList.toggle('tombol-tampil')
         return
     }
-    tombol.classList.toggle('tombol-tampil')
+    tombol.classList.remove('tombol-tampil')
 })
 
 document.addEventListener('scroll', () => {

@@ -56,7 +56,9 @@ class PembayaranController extends Controller
         $data = [
             'judul'     => 'SAHABAT KARIR',
 
-            'css'       => [],
+            'css'       => [
+                'pages/user/bayarPaket'
+            ],
 
             'js'        => [
                 'midtrans/bayarPaket'
