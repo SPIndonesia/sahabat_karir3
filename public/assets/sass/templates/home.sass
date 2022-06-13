@@ -1,0 +1,253 @@
+@use '../base/reset'
+
+@use '../units/variables' as var
+
+::-webkit-scrollbar
+    width: 10px
+
+::-webkit-scrollbar-track
+    background: #0779e4
+
+::-webkit-scrollbar-thumb
+    background: #fff
+
+::-webkit-scrollbar-thumb:hover
+    background: #000
+
+html
+    font-size: 10px
+
+body
+    max-width: 1920px
+    margin: auto
+    font-size: 1.4rem
+
+header, .header-left, .header-right
+    display: flex
+    align-items: center
+    column-gap: 2rem
+
+header
+    justify-content: space-between
+    padding: 2rem 4rem
+
+    position: sticky
+    top: 0
+    z-index: 999999999
+
+    background-color: #fff
+
+    a
+        margin-right: 2rem
+
+.logo img
+    height: calc( var.$tinggi-header - 2rem )
+
+.keranjang
+    color: #2D96F9
+
+    &:hover
+        color: var.$warna-biru
+
+    svg
+        width: 30px
+        height: 30px
+
+// TODO: Footer
+footer
+    background-color: var.$warna-biru
+    width: 100%
+    color: #fff
+    padding: 20px 50px
+    box-sizing: border-box
+
+.judul__footer
+    display: flex
+    gap: 20px
+    align-items: center
+
+    img
+        width: 70px
+
+    h2
+        font-size: 2rem
+        font-weight: bold
+
+.konten__footer
+    width: 89%
+    margin: auto
+    display: grid
+    gap: 20px
+    padding: 30px 0
+
+    &>div
+        display: grid
+        grid-template-rows: 30px 1fr
+
+    h3
+        font-size: 20px
+        font-weight: bold
+        color: #ccc
+
+    li
+        padding: 10px 0
+        color: #ccc
+
+    li a
+        background-image: linear-gradient(transparent 0%, transparent 70%, #fff 100%, #fff 100%)
+        background-repeat: no-repeat
+        background-size: 0% 100%
+        background-position-X: right
+        transition: background-size 300ms
+
+    a:hover
+        background-size: 100% 100%
+        background-position-x: left
+        color: #fff
+
+    .alamat li:last-child
+        display: flex
+
+    .alamat svg
+        width: 20px
+        margin-right: 10px
+        fill: #ccc
+
+// TODO: Desktop
+@media screen and (min-width:992px)
+    // TODO: Navigasi
+    .nav-header a
+        background-image: linear-gradient(transparent 0%, transparent 90%, rgba(7, 121, 228, .5) 90%, rgba(7, 121, 228, .5) 100%)
+        background-repeat: no-repeat
+        background-size: 0% 100%
+        background-position-X: right
+        transition: background-size 300ms
+
+        &:hover
+            background-size: 100% 100%
+            background-position-x: left
+            color: var.$warna-biru
+
+    // TODO: Footer
+    .konten__footer
+        grid-template-columns: repeat(3, 1fr) 2.5fr
+
+// Todo: Tab & Desktop
+@media screen and (min-width:768px)
+    .tombol
+
+        .logout
+            background-color: #7707E3
+
+            &:hover
+                background-color: #6806C3
+
+        .admin
+            background-color: #AF00FF
+
+            &:hover
+                background-color: #8300FF
+
+        a
+            padding: 1rem 3rem
+            box-sizing: border-box
+            background-color: #2D96F9
+            color: #fff
+
+            border-radius: 5px
+            transition: background-color 300ms
+
+            &:hover
+                background-color: var.$warna-biru
+
+    .aksi
+        display: none
+
+// TODO: Tab
+@media screen and (min-width:768px) and (max-width:992px)
+    // TODO: Footer
+    .konten__footer
+        grid-template-columns: repeat(3, 30%)
+        justify-content: space-between
+
+// TODO: Tab dan Mobile
+@media screen and (max-width:992px)
+    header a
+        margin-right: 1rem
+
+// TODO: Mobile
+@media screen and (max-width:768px)
+    header
+        padding: 2rem
+
+    .nav-header
+        display: none
+
+    .header-right
+        position: relative
+
+        .tombol-tampil
+            transform: scaleY(1)
+            top: calc( 100% + 1rem )
+            transition: transform 300ms, top 300ms
+
+    .aksi
+        display: flex
+        align-items: center
+        column-gap: 1rem
+
+    .user-icon
+        background-color: var.$warna-biru
+        padding: 1rem
+        box-sizing: border-box
+        border-radius: 50%
+
+        svg
+            width: 2.5rem
+            height: 2.5rem
+            color: #fff
+
+    .dropdown svg
+        width: 2.5rem
+        height: 2.5rem
+        color: var.$warna-biru
+
+    .tombol
+        transform: scaleY(0)
+
+        position: absolute
+        top: 0
+        right: 0
+
+        background-color: var.$warna-biru
+        width: 200%
+
+        display: flex
+        flex-direction: column
+        row-gap: 1rem
+        border-radius: 5px
+
+        &>a
+            display: block
+            padding: 1rem
+            color: #fff
+
+    .keranjang
+        display: none
+
+    #halaman-landing
+        margin-top: 50px
+
+    // TODO: Footer
+    footer
+        padding: 20px
+
+    .konten__footer .alamat .email
+        overflow-wrap: break-word
+
+    .konten__footer .alamat .lokasi
+        justify-content: space-between
+
+    .konten__footer .alamat p
+        width: 100%
+        padding: 0 20px

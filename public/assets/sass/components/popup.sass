@@ -1,0 +1,117 @@
+@use '../units/variables' as var
+
+._popup
+    position: absolute
+    opacity: 0
+    display: none
+
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+
+    background-color: rgba(0, 0, 0, .3)
+    z-index: 999999
+
+    transition: opacity 300ms
+
+.popup
+    position: relative
+
+    width: 450px
+
+    background-color: #fff
+    border-radius: 4px
+
+    top: 50%
+    left: 50%
+
+    transform: translate(-50%, -50%)
+
+.tombol-close
+    position: absolute
+    top: 10px
+    right: 10px
+    z-index: 1
+
+    &:hover
+        cursor: pointer
+
+    &>svg
+        width: 2em
+        height: 2em
+
+        color: var.$warna-biru
+
+.konten
+    padding: 2rem
+    box-sizing: border-box
+    overflow: auto
+    min-height: 50rem
+
+    .judul
+        transform: translateY(-10px)
+
+        position: sticky
+        top: 0
+        background-color: #fff
+        padding: 1em 0
+        z-index: 0
+
+        font-size: 2.5rem
+        font-weight: bold
+        color: var.$warna-biru
+
+    .form
+        display: flex
+        flex-direction: column
+        row-gap: 1rem
+
+        li
+            display: flex
+            flex-direction: column
+            gap: .5em
+            margin-bottom: 1em
+
+        input, select, textarea
+            font-size: 1.4rem
+            border: none
+            height: 3rem
+            padding: 5px 0
+            box-sizing: border-box
+            border-bottom: 3px solid var.$warna-biru
+
+            &:focus
+                outline: none
+
+        textarea
+            resize: none
+            resize: vertical
+            min-height: 8rem
+
+    .tombol-simpan
+        position: absolute
+        bottom: 0
+        right: 2rem
+
+        button
+            width: 100%
+
+            background: var.$warna-biru
+            color: #fff
+            font-weight: 600
+            letter-spacing: 1px
+
+            padding: 1rem 2rem
+
+            border: none
+            border-radius: 3px
+
+            transition: background 300ms
+
+            &:hover
+                cursor: pointer
+                background: var.$warna-biru
+
+.opacity-1
+    opacity: 1

@@ -1,0 +1,260 @@
+@use 'modules/_keranjang.payment' as template
+
+@mixin tombol($px: 1em, $py:2em)
+    margin: 0 auto
+    width: fit-content
+    height: fit-content
+    padding: $px $py
+    border-radius: 5px
+    background-color: #1A8DF8
+    border: none
+    color: #fff
+    font-size: 1.4rem
+    transition: 300ms
+
+    &:hover
+        cursor: pointer
+        background-color: template.$warna-biru
+
+@mixin heading($bottom: true)
+    margin-bottom: 2.5em
+    padding: 2em 0
+
+    @if ($bottom)
+        border-bottom: 5px solid #eaeaea
+
+    & h1
+        font-size: 2.5rem
+        font-weight: bold
+
+// TODO: Payment
+#payment
+    width: 80%
+    height: 70vh
+    margin: auto
+
+.heading
+    @include heading
+
+.checkout
+    display: flex
+    flex-wrap: wrap
+    gap: 2rem
+    height: 100%
+
+// TODO: Kelas
+.list-kelas
+    flex: 2 2 500px
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    height: 100%
+
+._kelas
+    overflow-y: auto
+
+div.sub-total
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding-top: 3em
+
+    h1
+        font-size: 2rem
+        font-weight: bold
+
+    p.sub-total
+        font-size: 1.4rem
+        font-weight: bold
+
+.kelas
+    margin: 0 2em
+    display: flex
+    align-items: center
+    margin-bottom: 2em
+    padding: 3em 2em
+    box-shadow: template.$shadow-light
+    border-radius: 10px
+
+    img
+        width: 100px
+
+    .paket
+        flex: 1
+
+    .nama-kelas
+        font-weight: 600
+        font-size: 1.6rem
+
+    .jenis-harga>p
+        font-size: 1.2rem
+
+    p.harga
+        color: #FF4949
+
+    .checkbox
+        width: fit-content
+        padding: 0 2rem
+
+// TODO: Pembayaran
+.pembayaran
+    flex: 1 1 350px
+    display: flex
+    flex-direction: column
+    box-shadow: template.$shadow-light
+    border-radius: 10px
+    padding: 2em
+    box-sizing: border-box
+
+    p
+        font-size: 1.6rem
+        font-weight: 500
+
+    .heading__pembayaran
+        @include heading(false)
+        text-align: center
+        height: 50px
+
+    .ringkasan div.total
+        border-bottom: 3px solid #eaeaea
+        margin-bottom: 2em
+
+        &>span
+            display: flex
+            align-items: center
+            justify-content: space-between
+            margin-bottom: 2em
+
+    .ringkasan div.total-tagihan
+        display: flex
+        align-items: center
+        justify-content: space-between
+        margin-bottom: 2em
+
+    .metode-pembayaran
+        display: flex
+        flex: 1
+        justify-content: center
+        align-items: end
+
+        .tombol
+            @include tombol
+
+// TODO: Bayar
+.bayar
+    display: none
+    opacity: 0
+    position: absolute
+    left: 0
+    right: 0
+    top: 0
+    bottom: 0
+    background-color: rgba(51, 51, 51, .3)
+
+    form
+        position: relative
+        min-width: 400px
+        max-height: 70vh
+        background-color: #fff
+        border-radius: 1em
+        margin: auto
+        overflow-y: scroll
+
+        &>div
+            padding: 2em 1em
+
+        &>.judul
+            border-bottom: 1px solid #cacaca
+            text-align: center
+
+            h1
+                font-size: 2.3rem
+                color: #555
+                font-weight: bold
+
+    .metode ul li:first-child
+        display: flex
+        justify-content: space-between
+
+    .judul
+        font-size: 1.6rem
+        font-weight: bold
+        color: #555
+
+    .metode li
+        display: flex
+        align-items: center
+        justify-content: space-between
+        border-bottom: 1px solid #cacaca
+        padding: 2em 0
+
+    .metode .logo-mitra
+        display: grid
+        grid-template-columns: 100px 2fr
+        column-gap: 2em
+        align-items: center
+
+        h6
+            font-size: 1.4rem
+            font-weight: bold
+            color: #555
+
+    .logo-mitra img
+        height: 30px
+
+    .ringkasan
+        h1
+            margin-bottom: 1.5em
+        span
+            display: flex
+            align-items: center
+            justify-content: space-between
+            margin-bottom: 1em
+
+            font-size: 1.4rem
+
+    div.total
+
+        span
+            display: flex
+            justify-content: space-between
+            align-items: center
+
+        button
+            @include tombol(.5em, 1em)
+            margin: 0
+
+.popup-bayar
+    display: flex
+    animation: popup .3s forwards
+
+.tombol-close
+    position: absolute
+    right: 2em
+    top: 2em
+
+    svg
+        width: 3em
+        height: 3em
+        color: #555
+
+@keyframes popup
+    100%
+        opacity: 1
+
+// TODO: Dekstop
+@media screen and (min-width: 992px)
+
+// TODO: Desktop dan Tab
+@media screen and (min-width: 768px)
+
+// TODO: Tab
+@media screen and (max-width: 992px) and (min-width: 768px)
+
+// TODO: Tab dan Mobile
+@media screen and (max-width: 992px)
+    #payment .checkout
+        margin-bottom: 5em !important
+
+// TODO: Mobile
+@media screen and (max-width: 768px)

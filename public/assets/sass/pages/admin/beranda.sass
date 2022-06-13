@@ -1,0 +1,53 @@
+@use '../../units/variables' as var
+
+.content>section:not(:last-child)
+    margin-bottom: 5rem
+
+._kartu
+    display: flex
+    column-gap: 2rem
+
+    &>div
+        min-width: 30rem
+        height: 15rem
+        padding: 2rem
+        box-sizing: border-box
+        border-radius: 1rem
+        background-color: #fff
+        box-shadow: var.$shadow-default
+
+        position: relative
+
+    .persentase
+        position: absolute
+        bottom: 1rem
+        right: 1rem
+        background-color: var.$bright-green
+        padding: 5px 10px
+        border-radius: 3px
+
+        color: #fff
+
+        &:hover
+            cursor: default
+
+    .icon
+        margin-bottom: 1rem
+
+        img
+            height: 8rem
+
+    .text
+        a
+            transition: color 300ms
+
+            &:hover
+                color: var.$warna-biru
+
+        p
+            font-size: 1.2rem
+            color: #777
+
+// TODO: Sec Two
+#bagan
+    height: 500px

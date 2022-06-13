@@ -1,0 +1,178 @@
+@use '../../units/variables' as var
+
+.judul
+    text-align: center
+    margin-bottom: 5rem
+
+    h1
+        color: var.$warna-biru
+        font-size: 3.5rem
+        font-weight: bold
+        margin-bottom: 1rem
+
+    h3
+        color: #888
+        font-size: 2rem
+
+._card
+    display: grid
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 32rem))
+    justify-content: space-around
+    gap: 2rem
+
+    padding: 2rem 5rem
+
+.card
+    height: 38rem
+    overflow: hidden
+    padding: 7px
+    border-radius: 5px
+    border: 1px solid #999
+    background-color: #fff
+
+    position: relative
+
+    img
+        width: 100%
+
+    &>div
+        position: absolute
+        bottom: 0
+        width: calc( 100% - 14px )
+        height: 20%
+        z-index: 99
+
+        background-color: #fff
+        padding: 1rem 5px
+        box-sizing: border-box
+
+        transition: height 500ms
+
+        &:hover
+            cursor: default
+
+    // TODO: Animasi
+    .opacity
+        opacity: 1
+
+    .height
+        height: 100%
+
+.detail
+    opacity: 0
+    transition: opacity 500ms
+
+    font-family: Arial, Helvetica, sans-serif
+
+.detail
+    max-height: 90%
+    display: flex
+    flex-direction: column
+    row-gap: 1rem
+    text-align: center
+    overflow-y: auto
+
+    h1
+        font-size: 1.8rem
+        text-transform: uppercase
+        font-weight: bold
+        margin-bottom: 5px
+
+    p
+        font-size: 1.3rem
+        color: #666
+        margin-bottom: 2px
+
+    .tombol
+        padding: 1rem 2rem
+        border-radius: 5px
+        background-color: var.$biru-3
+        font-size: 1.4rem
+        font-weight: bold
+        color: #fff
+
+        transition: background-color 300ms
+
+        &:hover
+            background-color: var.$warna-biru
+
+.detail::-webkit-scrollbar
+    width: 2px
+
+.detail::-webkit-scrollbar-track
+    background: #0779e4
+
+.detail::-webkit-scrollbar-thumb
+    background: #fff
+
+.detail::-webkit-scrollbar-thumb:hover
+    background: #000
+
+.info
+    position: absolute
+    background-color: #fff
+    bottom: 0
+    padding-bottom: 1rem
+    width: inherit
+
+    h1
+        color: var.$warna-biru
+        margin-bottom: 1rem
+
+    span
+        display: flex
+        justify-content: space-between
+        width: 100%
+
+    svg
+        color: var.$warna-biru
+        width: 15px
+        height: 15px
+
+.paket-kosong
+    width: fit-content
+    margin: auto
+
+    text-align: center
+    font-size: 1.5rem
+    padding: 1rem 3rem
+    border-radius: 4px
+    background-color: var.$scarlet
+    color: #fff
+    font-weight: bold
+
+    display: flex
+    align-items: center
+    column-gap: 2rem
+    justify-content: center
+
+    &:hover
+        cursor: pointer
+
+    svg
+        width: 5rem
+        height: 5rem
+
+// TODO: Desktop
+@media screen and (min-width:992px)
+
+// TODO: Tab & Desktop
+@media screen and (min-width:768px)
+
+// TODO: Tab
+@media screen and (min-width:768px) and (max-width:992px)
+
+// TODO: Tab dan Mobile
+@media screen and (max-width:992px)
+
+// Todo: Mobile
+@media screen and (max-width:768px)
+    ._card
+        padding: 0
+
+    .judul
+        h1
+            font-size: 2rem
+
+        h3
+            font-size: 1.4rem

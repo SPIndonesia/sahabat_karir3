@@ -1,0 +1,143 @@
+@use '../../units/variables' as var
+
+._detail-paket
+    background-color: #fff
+    box-shadow: 0 3px 5px 1px #999
+    min-height: 50rem
+    margin: 2rem 5rem
+    padding: 5rem
+    box-sizing: border-box
+
+    display: grid
+    grid-template-areas: 'judul judul' 'detail paket'
+    grid-template-columns: repeat(2, 50%)
+    gap: 2rem
+
+    &>div:not(:first-child)
+        display: flex
+        flex-direction: column
+        row-gap: 2rem
+
+        h1
+            font-size: 2rem
+            color: var.$warna-biru
+            font-weight: bold
+
+.judul
+    grid-area: judul
+
+    font-size: 3rem
+    text-align: center
+    color: var.$warna-biru
+    font-weight: bold
+    margin-bottom: 2rem
+
+    span
+        color: #000
+
+    h1::after
+        content: 'Pembayaran'
+        color: var.$orange-1
+
+.detail
+    grid-area: detail
+
+    &>div:nth-child(2)
+        display: flex
+        justify-content: space-between
+        text-align: center
+        column-gap: 2rem
+
+        h1
+            color: #000
+
+    .detail-paket
+        width: 50%
+
+        div
+            margin-bottom: 2rem
+
+        h1
+            margin-bottom: 1rem
+
+        p
+            margin-bottom: 3px
+            color: #666
+
+    .gambar-paket
+        height: 40rem
+        width: 50%
+        overflow: hidden
+        border: 1px solid #999
+        padding: 5px
+        border-radius: 5px
+
+    img
+        background-color: red
+        color: #fff
+        max-width: 100%
+
+.paket
+    grid-area: paket
+
+    form
+        display: none
+
+    button
+        width: fit-content
+        border: none
+        background-color: var.$biru-3
+        color: #fff
+        border-radius: 5px
+        min-width: 50px
+        min-height: 20px
+        padding: 5px 3rem
+
+        float: right
+        transition: background-color 300ms
+
+        &:hover
+            cursor: pointer
+            background-color: var.$warna-biru
+
+    div:nth-child(2) span:not(:last-child)
+        display: block
+        margin-bottom: 2rem
+        padding: 1rem 0
+        border-bottom: 2px solid var.$warna-biru
+
+    div:nth-child(2)
+        span
+            h2
+                margin-bottom: 5px
+
+            p
+                font-size: 1.2rem
+
+        .harga
+            font-size: 2rem
+
+            p
+                font-size: 1.8rem
+                font-weight: 600
+                color: var.$scarlet
+
+// TODO: Tab dan Mobile
+@media screen and ( max-width: 992px )
+
+// TODO: Mobile
+@media screen and ( max-width: 768px )
+    ._detail-paket
+        grid-template-areas: 'judul' 'paket' 'detail'
+        grid-template-columns: 100%
+        padding: 5rem 2rem
+        margin: 2rem
+
+        &>div:not(.judul) h1
+            font-size: 1.6rem
+
+        .detail
+            display: none !important
+
+    .judul
+        font-size: 2rem
