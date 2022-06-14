@@ -36,7 +36,7 @@
 
             <tbody>
                 @foreach ($data_kategori as $d)
-                <tr data-id="{{ $d->id_kategori}}">
+                <tr>
                     <td>{{ $loop->iteration }}</td>
                     <td>{{ $d->nama }}</td>
                     <td>{{ $d->deskripsi }}</td>
@@ -45,8 +45,8 @@
                     </td>
                     <td>
                         <div class="aksi">
-                            <div class="ubah" data-kategori="{{ $d }}">
-                                <i class="ubah fa-solid fa-pen"></i>
+                            <div data-id="{{ $d->id_kategori}}" class="ubah" data-kategori="{{ $d }}">
+                                <i data-id="{{ $d->id_kategori}}" class="ubah fa-solid fa-pen"></i>
                             </div>
 
                             <div class="hapus">
@@ -77,7 +77,7 @@
     </div>
 </div>
 
-<div class="_popup">
+<div class="_popup" data-url-ubah="admin/kategori/ubah" data-url-store="admin/kategori/store">
     <div class="popup">
         <div class="tombol-close">
             <i class="fa-solid fa-xmark"></i>
@@ -94,8 +94,7 @@
                 <ul class="form">
                     <li>
                         <label for="nama">Nama Kategori : </label>
-                        <input class="kategori-nama" type="text" placeholder="Masukkan Nama Kategori" name="nama"
-                            autocomplete="off">
+                        <input type="text" placeholder="Masukkan Nama Kategori" name="nama" autocomplete="off">
                     </li>
 
                     <li>

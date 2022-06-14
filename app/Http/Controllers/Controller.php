@@ -10,4 +10,14 @@ use Illuminate\Routing\Controller as BaseController;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+    public function adminPages($page, $data)
+    {
+        return view('admin/' . $page, $data);
+    }
+
+    public function userPages($page, $data)
+    {
+        return view('user/' . $page, $data);
+    }
 }
