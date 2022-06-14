@@ -11,7 +11,7 @@
 
             <div class="text">
                 <a href="">Income</a>
-                <p>35.000.000</p>
+                <p>{{ $income->sum('jumlah_dibayar') }}</p>
             </div>
         </div>
 
@@ -29,7 +29,7 @@
 
             <div class="text">
                 <a href="/admin/user">Jumlah Peserta</a>
-                <p>200 Orang</p>
+                <p>{{ $semua_user->count() }}</p>
             </div>
         </div>
 
@@ -47,7 +47,7 @@
 
             <div class="text">
                 <a href="/admin/kategori">Kategori</a>
-                <p>5</p>
+                <p>{{ $kategori->count()}}</p>
             </div>
         </div>
     </div>

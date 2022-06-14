@@ -14,23 +14,46 @@ class PaketSeeder extends Seeder
      */
     public function run()
     {
-        Paket::create(
+        $paket =
             [
                 [
-                    'nama' => 'SBMPTN',
+                    'nama' => 'Paket1',
                     'harga' => 10000,
                     'deskripsi' => "Lorem, ipsum dolor.",
                     'id_kategori' => 1,
                     'image_url' => 'foto.png'
                 ], [
-                    'nama' => 'ROUTE',
+                    'nama' => 'Paket 3',
                     'harga' => 10000,
                     'deskripsi' => "Lorem, ipsum dolor.",
-                    'id_kategori' => 1,
+                    'id_kategori' => 2,
                     'image_url' => 'foto.png'
-                ]
+                ],
+                [
+                    'nama' => 'Paket 4',
+                    'harga' => 10000,
+                    'deskripsi' => "Lorem, ipsum dolor.",
+                    'id_kategori' => 3,
+                    'image_url' => 'foto.png'
+                ],
+                [
+                    'nama' => 'Paket 5',
+                    'harga' => 10000,
+                    'deskripsi' => "Lorem, ipsum dolor.",
+                    'id_kategori' => 4,
+                    'image_url' => 'foto.png'
+                ],
+                [
+                    'nama' => 'Paket 6',
+                    'harga' => 10000,
+                    'deskripsi' => "Lorem, ipsum dolor.",
+                    'id_kategori' => 5,
+                    'image_url' => 'foto.png'
+                ],
+            ];
 
-            ]
-        );
+        foreach ($paket as $key => $paket) {
+            Paket::create($paket);
+        }
     }
 }

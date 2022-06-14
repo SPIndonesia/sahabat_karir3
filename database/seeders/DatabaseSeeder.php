@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 use App\Models\Kategori;
+use App\Models\Orders;
+use App\Models\UserPaket;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,9 +16,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call([
-        //     KategoriSeeder::class,
-        //     PaketSeeder::class,
-        // ]);
+        $this->call([
+            UserSeeder::class,
+            OrdersSeeder::class,
+            KategoriSeeder::class,
+            PaketSeeder::class,
+            // UserPaket::class,
+        ]);
     }
 }

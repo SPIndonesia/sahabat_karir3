@@ -13,5 +13,15 @@ class UserPaket extends Model
     protected $fillable = [
         'id_user', 'id_paket', 'id_pembayaran', 'status'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'id_user');
+    }
+
+    public function paket()
+    {
+        return $this->belongsTo(Paket::class, 'id_paket');
+    }
     #add some relation from user and this table, then add some relation from paket and this table
 }

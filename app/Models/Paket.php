@@ -19,4 +19,8 @@ class Paket extends Model
     {
         return $this->belongsTo(Kategori::class, 'id_kategori');
     }
+    public  function user()
+    {
+        return $this->hasMany(UserPaket::class, 'id_user', 'id');
+    }
 }

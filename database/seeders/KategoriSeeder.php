@@ -14,9 +14,36 @@ class KategoriSeeder extends Seeder
      */
     public function run()
     {
-        Kategori::create([
-            ['nama' => 'sbmptn', 'deskripsi' => "Lorem, ipsum dolor.", 'image_url' => 'foto.png'],
-            ['nama' => 'Polri', 'deskripsi' => "Lorem, ipsum dolor.", 'image_url' => 'foto.png']
-        ]);
+        $kategori = [
+            [
+                'nama' => 'SBMPTN',
+                'deskripsi' => 'iniDeskripsi',
+                'image_url' => 'belumada.png',
+            ],
+            [
+                'nama' => 'IKADIN',
+                'deskripsi' => 'iniDeskripsi',
+                'image_url' => 'belumada.png',
+            ],
+            [
+                'nama' => 'CPNS',
+                'deskripsi' => 'iniDeskripsi',
+                'image_url' => 'belumada.png',
+            ],
+            [
+                'nama' => 'POLRI',
+                'deskripsi' => 'iniDeskripsi',
+                'image_url' => 'belumada',
+            ],
+            [
+                'nama' => 'PELATIHAN',
+                'deskripsi' => 'iniDeskripsi',
+                'image_url' => 'belumada.png',
+            ],
+        ];
+
+        foreach ($kategori as $key => $kategori) {
+            Kategori::create($kategori);
+        }
     }
 }
