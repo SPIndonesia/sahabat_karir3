@@ -15,20 +15,23 @@ if (tabel) {
         if (target.classList.contains('tombol-tambah')) {
             e.preventDefault()
 
+            const input = [...elAll('._popup input')]
+            input.map(e => e.setAttribute('value', ''))
+
             showPopup({
                 judul: 'Tambah Data',
                 teksTombol: 'Simpan',
-                action: `${window.origin}/admin/kategori/store`
+                action: `${window.origin}/${el('[data-url-store]').getAttribute('data-url-store')}`
             })
 
             put()
         } else if (target.classList.contains('ubah') || parent.classList.contains('ubah')) {
-            const id = el('.tabel [data-id]').getAttribute('data-id')
+            const id = target.getAttribute('data-id') || parent.getAttribute('data-id')
 
             showPopup({
                 judul: 'Ubah Data',
                 teksTombol: 'Simpan Perubahan',
-                action: `${window.origin}/admin/paket/ubah/${id}`
+                action: `${window.origin}/${el('[data-url-ubah]').getAttribute('data-url-ubah')}/${id}`
             })
 
             put('PUT')
