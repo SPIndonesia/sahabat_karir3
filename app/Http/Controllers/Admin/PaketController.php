@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-
+use App\Http\Requests\PaketRequest;
 use App\Models\Paket;
 use App\Models\Kategori;
 use Illuminate\Http\Request;
@@ -59,7 +59,7 @@ class PaketController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PaketRequest $request)
     {
         $imageName = time() . '.' . $request->file('image')->extension();
         $request->file('image')->move(public_path('assets/img/paket'), $imageName);
@@ -103,7 +103,7 @@ class PaketController extends Controller
      * @param  \App\Models\Paket  $paket
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Paket $paket, $id)
+    public function update(PaketRequest $request, Paket $paket, $id)
     {
         $imageName = time() . '.' . $request->file('image')->extension();
         $request->file('image')->move(public_path('assets/img/paket'), $imageName);
@@ -115,7 +115,7 @@ class PaketController extends Controller
             'image_url' => $imageName,
         ]);
     }
-    public function ubah(Request $request, Paket $paket, $id)
+    public function ubah(PaketRequest $request, Paket $paket, $id)
     {
         $data = Paket::find($id)->update([
             'nama' => $request->nama,

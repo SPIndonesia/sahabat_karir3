@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\KategoriRequest;
 use App\Models\Kategori;
 use Illuminate\Http\Request;
 
@@ -53,7 +54,7 @@ class KategoriController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(KategoriRequest $request)
     {
         $imageName = time() . '.' . $request->file('gambar_kategori')->extension();
         $request->file('gambar_kategori')->move(public_path('assets/img/kategori'), $imageName);
@@ -99,7 +100,7 @@ class KategoriController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function ubah(Request $request, $id)
+    public function ubah(KategoriRequest $request, $id)
     {
         $imageName = time() . '.' . $request->file('gambar_kategori')->extension();
         $request->file('file')->move(public_path('assets/img/kategori'), $imageName);
@@ -122,7 +123,7 @@ class KategoriController extends Controller
 
 
 
-    public function destroy(Kategori $kategori, $id)
+    public function destroy(KategoriRequest $kategori, $id)
     {
         $data = Kategori::find($kategori->id)->delete();
         return redirect('admin/kategori')->with('status', 'Kategori berhasil dihapus!');
