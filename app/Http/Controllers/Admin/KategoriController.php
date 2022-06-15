@@ -54,7 +54,7 @@ class KategoriController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(KategoriRequest $request)
+    public function store(Request $request)
     {
         $imageName = time() . '.' . $request->file('gambar_kategori')->extension();
         $request->file('gambar_kategori')->move(public_path('assets/img/kategori'), $imageName);
@@ -68,6 +68,26 @@ class KategoriController extends Controller
 
 
         return redirect('admin/kategori')->with('status', 'Kategori berhasil dibuat!');
+    }
+
+
+    public function search(Request $request)
+    {
+        if ($request->ajax()) {
+            $output = "";
+            $kategori = Kategori::where('nama', 'LIKE', '%' . $request->search . "%")->get();
+
+            if ($kategori) {
+                $outputs = [
+                    'nama' => $kategori->nama,
+                    'deskripsi' => $kategori->deskripsi,
+                    'image_url' => $kategori->image_url,
+                ];
+
+
+                return response($outputs);
+            }
+        }
     }
 
     /**
@@ -102,7 +122,7 @@ class KategoriController extends Controller
 
     public function ubah(KategoriRequest $request, $id)
     {
-        $imageName = time() . '.' . $request->file('gambar_kategori')->extension();
+        $imageName = Kategori::find($id)->image_url;
         $request->file('file')->move(public_path('assets/img/kategori'), $imageName);
         $data = Kategori::find($id)->update([
             'nama' => $request->nama,
@@ -125,6 +145,7 @@ class KategoriController extends Controller
 
     public function destroy(KategoriRequest $kategori, $id)
     {
+
         $data = Kategori::find($kategori->id)->delete();
         return redirect('admin/kategori')->with('status', 'Kategori berhasil dihapus!');
     }
@@ -132,6 +153,8 @@ class KategoriController extends Controller
 
     public function hapus($id)
     {
+        $imageName = Kategori::find($id)->image_url;
+        unlink('assets/img/kategori/' . $imageName);
         $data = Kategori::find($id)->delete();
         return redirect('admin/kategori')->with('status', 'Kategori berhasil dihapus!');
     }

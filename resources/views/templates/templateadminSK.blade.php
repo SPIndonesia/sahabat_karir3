@@ -33,9 +33,12 @@
                 </div>
 
                 <div class="nama-admin">
-                    <h4>Nama Admin</h4>
+                    <h4>{{ Auth::user()->nama }}</h4>
                     <p>Admin Bengkulu</p>
                 </div>
+                <form action="{{ route('logout') }}" method="post">
+                    @csrf
+                    <Button type="submit" class="logout">Logout</Button></form>
             </div>
         </div>
     </header>
@@ -45,10 +48,10 @@
     @endif
 
     <nav class="navigasi-admin">
-        <div class="logo">
+        <a href="/" class="logo">
             <img src="{{ asset('assets/img/icon/logo-sk.png') }}" alt="sahabat karir">
             <h1>Sahabat Karir</h1>
-        </div>
+        </a>
 
         <a href="/admin/beranda">
             <i class="fa-solid fa-house-user"></i>
