@@ -54,7 +54,7 @@ class KategoriController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(KategoriRequest $request)
     {
         $imageName = time() . '.' . $request->file('gambar_kategori')->extension();
         $request->file('gambar_kategori')->move(public_path('assets/img/kategori'), $imageName);
@@ -71,7 +71,7 @@ class KategoriController extends Controller
     }
 
 
-    public function search(Request $request)
+    public function search(KategoriRequest $request)
     {
         if ($request->ajax()) {
             $output = "";
