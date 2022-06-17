@@ -13,6 +13,7 @@ use App\Http\Controllers\Api\Kategori\UpdateKategoriController;
 use App\Http\Controllers\Api\Paket\CreatePaketController;
 use App\Http\Controllers\Api\Paket\DeletePaketController;
 use App\Http\Controllers\Api\Paket\GetPaketController;
+use App\Http\Controllers\Api\Paket\GetUserPerKategoriController;
 use App\Http\Controllers\Api\Paket\ShowPaketController;
 use App\Http\Controllers\Api\Paket\UpdatePaketController;
 use App\Http\Controllers\Api\PembayaranController;
@@ -73,7 +74,7 @@ route::get('kategori',   GetKategoriController::class);
 
 
 route::get('paket', GetPaketController::class);
-
+route::get('paket/kategori/{id}', GetUserPerKategoriController::class);
 
 route::post('/pembayaran-handler', PembayaranController::class);
 
